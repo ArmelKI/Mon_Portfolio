@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { profile } from '../../data/profile';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: "Accueil", href: "#hero" },
-  { name: "Parcours", href: "#timeline" },
-  { name: "Compétences", href: "#skills" },
-  { name: "Projets", href: "#projects" },
-  { name: "Certifs", href: "#certifications" },
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Timeline", href: "#timeline" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Certifications", href: "#certifications" },
 ];
 
 const Navbar = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#contact" className="px-4 py-2 text-sm bg-primary/10 text-primary border border-primary/20 rounded-full hover:bg-primary hover:text-white transition-all">
-            Me Contacter
+            Get in Touch
           </a>
         </div>
 

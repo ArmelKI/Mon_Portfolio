@@ -1,38 +1,47 @@
 export const experiences = [
   {
     id: 1,
-    role: "Élève Ingénieur (Data & IA)",
-    company: "Télécom Nancy",
-    date: "2023 - Présent",
-    type: "school",
-    description: "Formation d'ingénieur généraliste du numérique avec spécialisation en Science des Données et Intelligence Artificielle.",
-    tags: ["Maths", "Algorithmique", "Big Data"]
+    role: "Project Manager",
+    company: "Telecom Nancy Services",
+    date: "Oct. 2025 - Present",
+    type: "asso",
+    description: "Leading digital projects for industrial clients. Technical team supervision and client relationship management.",
+    tags: ["Project Management", "Client Relations", "Leadership"]
   },
   {
     id: 2,
-    role: "CEO & Founder",
+    role: "Founder & CEO",
     company: "Axiane Agency",
-    date: "2023 - Présent",
+    date: "2025 - Present",
     type: "work",
-    description: "Fondateur d'une agence digitale. Gestion de la relation client, pilotage de projets web et stratégie de croissance.",
-    tags: ["Entrepreneuriat", "Management", "Tech Lead"]
+    description: "Founded a digital agency. Managing software development projects (pharmacy management, school systems) and data solutions.",
+    tags: ["Entrepreneurship", "Web Dev", "Strategy"]
   },
   {
     id: 3,
-    role: "Chef de Projet",
-    company: "Télécom Nancy Services",
-    date: "2023 - 2024",
-    type: "asso",
-    description: "Junior Entreprise. Management d'équipes étudiantes sur des missions réelles pour des entreprises clientes.",
-    tags: ["Gestion de Projet", "Qualité", "Suivi Client"]
+    role: "Engineering Student (Master's level)",
+    company: "Telecom Nancy",
+    date: "2025 - 2028",
+    type: "school",
+    description: "General engineering curriculum with a specialization in Artificial Intelligence, Data Science, and Cloud Computing.",
+    tags: ["Computer Science", "Applied Math", "Algorithms"]
   },
   {
     id: 4,
-    role: "Président Club Génie Logiciel",
-    company: "CPGE MENAPLN",
-    date: "2021 - 2023",
-    type: "asso",
-    description: "Organisation d'ateliers de programmation et hackathons. Promotion de l'open-source.",
-    tags: ["Leadership", "Formation", "Communauté"]
+    role: "Preparatory Classes (MPSI)",
+    company: "CPGE MENAPLN Bobo",
+    date: "2023 - 2025",
+    type: "school",
+    description: "Intensive 2-year preparation in Mathematics, Physics, and Engineering Sciences. Ranked top of the class.",
+    tags: ["Mathematics", "Physics", "Intensive Training"]
+  },
+  {
+    id: 5,
+    role: "National Representative",
+    company: "Intl. Mathematical Olympiad (IMO)",
+    date: "2023",
+    type: "award",
+    description: "Selected to represent Burkina Faso in Tokyo. Solving complex high-level mathematical problems.",
+    tags: ["International Competition", "Tokyo 2023", "Problem Solving"]
   }
 ];

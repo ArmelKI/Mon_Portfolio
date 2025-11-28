@@ -2,6 +2,12 @@ import React from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
+import About from './components/sections/About';
+import Timeline from './components/sections/Timeline';
+import Skills from './components/sections/Skills';
+import Projects from './components/sections/Projects';
+import Certifications from './components/sections/Certifications';
+import Contact from './components/sections/Contact';
 
 const App = () => {
   return (
@@ -10,21 +16,12 @@ const App = () => {
       
       <main>
         <div id="hero"><Hero /></div>
-        
-        {/* On ajoutera les autres sections ici bientôt */}
-        <div id="timeline" className="h-screen flex items-center justify-center bg-gray-900">
-          <p className="text-gray-500">Section Parcours (À venir)</p>
-        </div>
-        <div id="skills" className="h-screen flex items-center justify-center">
-           <p className="text-gray-500">Section Skills (À venir)</p>
-        </div>
-        <div id="projects" className="h-screen flex items-center justify-center bg-gray-900">
-           <p className="text-gray-500">Section Projets (À venir)</p>
-        </div>
-        <div id="contact" className="h-screen flex items-center justify-center">
-           <p className="text-gray-500">Section Contact (À venir)</p>
-        </div>
-
+        <div id="about"><About /></div>
+        <div id="timeline"><Timeline /></div>
+        <div id="skills"><Skills /></div>
+        <div id="projects"><Projects /></div>
+        <div id="certifications"><Certifications /></div>
+        <div id="contact"><Contact /></div>
       </main>
 
       <Footer />
