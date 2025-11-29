@@ -13,16 +13,6 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Titanic Survival Prediction",
-    category: "ai",
-    image: "/assets/images/1743868652707.jpeg", // À remplacer par une capture propre plus tard
-    techs: ["Scikit-Learn", "Matplotlib", "Model Tuning"],
-    description: "Machine Learning model predicting passenger survival. Advanced feature engineering and hyperparameter optimization.",
-    link: "https://github.com/ArmelKI/titanic-analysis",
-    icon: Database
-  },
-  {
-    id: 3,
     title: "Weather App Widget",
     category: "web",
     image: "/assets/images/weather-app.png",
@@ -32,16 +22,17 @@ export const projects = [
     icon: CloudSun
   },
   {
-    id: 4,
+    id: 3,
     title: " My Portfolio(This Site)",
     category: "web",
     image: "/assets/images/profil-armel.jpg",
     techs: ["React", "Framer Motion", "Tailwind"],
     description: "Interactive portfolio with fluid animations, dark mode, and a reusable component architecture.",
     link: "https://github.com/ArmelKI/Mon_Portfolio.git",
+    icon: Code
   },
   {
-    id: 5,
+    id: 4,
     title: "COVID-19 Live Tracker",
     category: "data",
     image: "/assets/images/covid_trends.png", 
