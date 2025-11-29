@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-dark">
         
-        {/* Background Grid & Spotlight inchangés... */}
+        {/* Background Grid & Spotlight */}
         <div 
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -43,7 +43,7 @@ const Hero = () => {
             Looking for a 2-year Apprenticeship (Sept 2026)
             </motion.div>
 
-            {/* Titre */}
+            {/* Title */}
             <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-            Engineering Student at <strong>Telecom Nancy</strong> & CEO at <strong>Axiane Agency</strong>.
+            Engineering Student at <strong>Telecom Nancy</strong> & Tech Lead at <strong>Axiane Agency</strong>.
             <br />I bridge the gap between mathematical theory and real-world applications.
             </motion.p>
 
@@ -83,7 +83,7 @@ const Hero = () => {
             </a>
             
             <a 
-                href="/assets/documents/CV_Armel.pdf"
+                href="/assets/documents/KI_Armel_Stephane_Novak.pdf"
                 target="_blank"
                 className="px-8 py-4 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-full font-medium transition-colors flex items-center gap-2 backdrop-blur-sm"
             >

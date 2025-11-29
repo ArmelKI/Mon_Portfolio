@@ -25,7 +25,7 @@ export const projects = [
     id: 3,
     title: " My Portfolio(This Site)",
     category: "web",
-    image: "/assets/images/profil-armel.jpg",
+    image: "/assets/images/Site.png",
     techs: ["React", "Framer Motion", "Tailwind"],
     description: "Interactive portfolio with fluid animations, dark mode, and a reusable component architecture.",
     link: "https://github.com/ArmelKI/Mon_Portfolio.git",

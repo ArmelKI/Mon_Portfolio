@@ -52,7 +52,11 @@ const About = () => {
                         </p>
 
                         <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            Currently an engineering student at <strong>Télécom Nancy</strong>, I combine scientific rigor (MPSI Prep Classes) with a pragmatic vision gained as <strong>CEO of Axiane Agency</strong>.
+                            Currently an engineering student at <strong>Telecom Nancy</strong>, I combine the scientific rigor from my Preparatory Classes with the pragmatic vision I gained as the <strong>CEO of Axiane Agency</strong>.
+                            <br /><br />
+                            <span className="text-sm italic opacity-80">
+                                🚀 Fun fact: When I'm not coding, I'm solving a <strong>Rubik's Cube</strong>, playing competitive <strong>Basketball</strong>, or exploring new cultures (I speak French, English, and learning Japanese).
+                            </span>
                         </p>
 
                         {/* Statistics / Strengths */}

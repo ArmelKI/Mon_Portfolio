@@ -48,7 +48,7 @@ const Contact = () => {
           <ContactCard 
             icon={Mail} 
             title="Email" 
-            value="kiarmel@gmail.com" 
+            value="kiarmelstephanenovak@gmail.com" 
             link={`mailto:${profile.email}`}
             color="text-red-400"
           />

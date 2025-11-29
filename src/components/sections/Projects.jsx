@@ -16,7 +16,8 @@ const Projects = () => {
         { id: 'all', label: 'All' },
         { id: 'data', label: 'Data Science' },
         { id: 'ai', label: 'A.I.' },
-        { id: 'web', label: 'Web Development' }
+        { id: 'web', label: 'Web Development' },
+        { id: 'management', label: 'Business & PM' }
     ];
 
     return (
