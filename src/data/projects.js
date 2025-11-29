@@ -8,7 +8,7 @@ export const projects = [
     image: "/assets/images/netflix-analysis.png", 
     techs: ["Python", "Pandas", "Seaborn", "Data Cleaning"],
     description: "End-to-end analysis of Netflix's catalog evolution. Refactored a legacy codebase to implement robust data cleaning and business-oriented visualizations.",
-    link: "https://github.com/ArmelKI/Netflix-Content-Analysis",
+    link: "https://github.com/ArmelKI/Netflix_data_analysis_V2.git",
     icon: BarChart
   },
   {
@@ -33,22 +33,21 @@ export const projects = [
   },
   {
     id: 4,
-    title: "CCPS University Portal",
-    category: "web",
-    image: "/assets/images/1743868775603.jpg",
-    techs: ["React", "Tailwind", "Vite"],
-    description: "Collaborative showcase website for Nazi Boni University. Modern responsive interface highlighting academic activities.",
-    link: "https://github.com/exemplede/CCPS",
-    icon: Globe
-  },
-  {
-    id: 5,
     title: " My Portfolio(This Site)",
     category: "web",
     image: "/assets/images/profil-armel.jpg",
     techs: ["React", "Framer Motion", "Tailwind"],
     description: "Interactive portfolio with fluid animations, dark mode, and a reusable component architecture.",
-    link: "https://github.com/ArmelKI/portfolio-armel", // Mettre le bon lien de ton repo portfolio
-    icon: Code
+    link: "https://github.com/ArmelKI/Mon_Portfolio.git",
+  },
+  {
+    id: 5,
+    title: "COVID-19 Live Tracker",
+    category: "data",
+    image: "/assets/images/covid_trends.png", 
+    techs: ["Python", "Pandas", "Automated Pipeline"],
+    description: "Automated ETL pipeline fetching live data from OWID. Compares infection trends across 4 countries using rolling averages to smooth variability.",
+    link: "https://github.com/ArmelKI/covid19-data-analysis.git",
+    icon: BarChart
   }
 ];
