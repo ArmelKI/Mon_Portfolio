@@ -83,7 +83,7 @@ export const certifications = [
         skills: ["Data Ecosystem", "Data Lifecycle", "Analysis Basics"],
         description: "Understanding the data ecosystem and the fundamentals of data analysis.",
         pdf: "/assets/documents/Coursera IBM Introduction to Data Analytics.pdf",
-        verifyUrl: "https://www.coursera.org/account/accomplishments/certificate/F70NE315RKWC"
+        verifyUrl: "https://www.coursera.org/account/accomplishments/verify/F70NE315RKWC"
     },
     {
         id: 8,
