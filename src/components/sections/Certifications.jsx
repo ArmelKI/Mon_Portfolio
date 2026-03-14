@@ -3,17 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, ShieldCheck, Award } from 'lucide-react';
 import { certifications } from '../../data/certifications';
 import SectionTitle from '../ui/SectionTitle';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Certifications = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('all');
+  const localizedDescriptions = t.certifications.items;
 
   // --- 1. FILTER CONFIGURATION ---
   const categories = [
-    { id: 'all', label: 'All' },
-    { id: 'data_ai', label: 'Data & AI' },       // Groups: data + ai
-    { id: 'cyber_cloud', label: 'Cyber & Cloud' }, // Groups: cyber + cloud
-    { id: 'dev', label: 'Dev & Mobile' },        // Groups: dev + mobile
-    { id: 'management', label: 'Business & PM' } // Groups: management + finance
+    { id: 'all', label: t.certifications.filters.all },
+    { id: 'data_ai', label: t.certifications.filters.dataAi },
+    { id: 'cyber_cloud', label: t.certifications.filters.cyberCloud },
+    { id: 'dev', label: t.certifications.filters.dev },
+    { id: 'management', label: t.certifications.filters.management }
   ];
 
   // --- 2. FILTERING LOGIC ---
@@ -29,7 +32,7 @@ const Certifications = () => {
   return (
     <section className="py-20 px-6 bg-white/5" id="certifications">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="Certifications" subtitle="Diplomas & Credentials" />
+        <SectionTitle title={t.certifications.sectionTitle} subtitle={t.certifications.sectionSubtitle} />
 
         {/* --- 3. FILTER BUTTONS --- */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -67,7 +70,7 @@ const Certifications = () => {
                     <Award size={24} />
                   </div>
                   <span className="text-xs font-mono text-gray-500 border border-gray-800 px-2 py-1 rounded whitespace-nowrap">
-                    {cert.date}
+                    {localizedDescriptions[cert.id]?.date ?? cert.date}
                   </span>
                 </div>
 
@@ -79,7 +82,7 @@ const Certifications = () => {
 
                 {/* Description (Added back!) */}
                 <p className="text-sm text-gray-400 mb-4 leading-relaxed line-clamp-3 flex-grow">
-                  {cert.description}
+                  {localizedDescriptions[cert.id]?.description ?? cert.description}
                 </p>
 
                 {/* Skills Tags */}
@@ -100,7 +103,7 @@ const Certifications = () => {
                     rel="noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 py-2 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-gray-300 transition-colors"
                   >
-                    <FileText size={14} /> View PDF
+                    <FileText size={14} /> {t.certifications.viewPdf}
                   </a>
                   
                   {/* Verify Button (Only shows if URL is valid) */}
@@ -110,7 +113,7 @@ const Certifications = () => {
                       target="_blank" 
                       rel="noreferrer"
                       className="flex items-center justify-center px-3 rounded text-xs font-bold border border-gray-700 hover:border-green-500 text-gray-500 hover:text-green-400 transition-colors"
-                      title="Verify Credential"
+                      title={t.certifications.verify}
                     >
                       <ShieldCheck size={14} />
                     </a>
@@ -123,7 +126,7 @@ const Certifications = () => {
         
         {/* Empty State Message */}
         {filteredCertifs.length === 0 && (
-            <p className="text-center text-gray-500 mt-10 italic">No certifications found in this category.</p>
+            <p className="text-center text-gray-500 mt-10 italic">{t.certifications.empty}</p>
         )}
       </div>
     </section>

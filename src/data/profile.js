@@ -5,7 +5,7 @@ export const profile = {
   email: "kiarmelstephanenovak@gmail.com",
   socials: {
     github: "https://github.com/ArmelKI",
-    linkedin: "www.linkedin.com/in/armel-stephane-novak-ki", 
+    linkedin: "https://www.linkedin.com/in/armel-stephane-novak-ki",
     discord: "ArmelKI" 
   }
 };

@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         dark: "#0a0a0a",
+        card: "#111111",
         primary: "#3b82f6", // Bleu tech
         accent: "#8b5cf6", // Violet Data/IA
       }

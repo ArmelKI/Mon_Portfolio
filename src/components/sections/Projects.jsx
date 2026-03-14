@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { projects } from '../../data/projects';
 import SectionTitle from '../ui/SectionTitle';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Projects = () => {
+    const { t } = useLanguage();
     const [filter, setFilter] = useState('all');
 
     // Filter projects by category
@@ -13,17 +15,20 @@ const Projects = () => {
         : projects.filter(p => p.category === filter);
 
     const categories = [
-        { id: 'all', label: 'All' },
-        { id: 'data', label: 'Data Science' },
-        { id: 'ai', label: 'A.I.' },
-        { id: 'web', label: 'Web Development' },
-        { id: 'management', label: 'Business & PM' }
+        { id: 'all', label: t.projects.filters.all },
+        { id: 'data', label: t.projects.filters.data },
+        { id: 'ai', label: t.projects.filters.ai },
+        { id: 'web', label: t.projects.filters.web },
+        { id: 'management', label: t.projects.filters.management }
     ];
+
+    const projectCopy = t.projects.items;
+    const categoryBadges = t.projects.categoryBadges;
 
     return (
         <section className="py-20 px-6 bg-dark">
             <div className="max-w-7xl mx-auto">
-                <SectionTitle title="Projects" subtitle="Portfolio & Case Studies" />
+                <SectionTitle title={t.projects.sectionTitle} subtitle={t.projects.sectionSubtitle} />
 
                 {/* Filters */}
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -64,7 +69,7 @@ const Projects = () => {
                                     />
                                     {/* Category Badge */}
                                     <span className="absolute top-4 right-4 z-20 px-3 py-1 bg-black/70 backdrop-blur-md text-xs font-mono text-white rounded-lg border border-white/10 uppercase">
-                                        {project.category}
+                                        {categoryBadges[project.category] ?? project.category}
                                     </span>
                                 </div>
 
@@ -80,7 +85,7 @@ const Projects = () => {
                                     </div>
 
                                     <p className="text-gray-400 text-sm mb-6 flex-grow">
-                                        {project.description}
+                                        {projectCopy[project.id]?.description ?? project.description}
                                     </p>
 
                                     {/* Tech Tags */}
@@ -99,7 +104,7 @@ const Projects = () => {
                                         rel="noreferrer"
                                         className="mt-auto w-full py-3 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl text-sm font-bold transition-all group-hover:text-white"
                                     >
-                                        <Github size={16} /> View Code
+                                        <Github size={16} /> {t.projects.viewCode}
                                     </a>
                                 </div>
                             </motion.div>
@@ -108,7 +113,7 @@ const Projects = () => {
                 </motion.div>
 
                 {filteredProjects.length === 0 && (
-                    <p className="text-center text-gray-500 mt-10">No projects available in this category yet.</p>
+                    <p className="text-center text-gray-500 mt-10">{t.projects.empty}</p>
                 )}
             </div>
         </section>

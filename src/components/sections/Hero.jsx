@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, ChevronDown, ArrowRight } from 'lucide-react';
-import { profile } from '../../data/profile';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Hero = () => {
+    const { t } = useLanguage();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Looking for a 2-year Apprenticeship (Sept 2026)
+            {t.hero.badge}
             </motion.div>
 
             {/* Title */}
@@ -50,9 +51,9 @@ const Hero = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6"
             >
-            Aspiring <br />
+            {t.hero.titleLead} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">
-                AI Engineer.
+                {t.hero.titleHighlight}
             </span>
             </motion.h1>
 
@@ -63,8 +64,8 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-            Engineering Student at <strong>Telecom Nancy</strong> & Tech Lead at <strong>Axiane Agency</strong>.
-            <br />I bridge the gap between mathematical theory and real-world applications.
+            {t.hero.bioLine1} <strong>Telecom Nancy</strong> {t.hero.bioLine2} <strong>Axiane Agency</strong>.
+            <br />{t.hero.bioLine3}
             </motion.p>
 
             {/* Buttons */}
@@ -78,16 +79,17 @@ const Hero = () => {
                 href="#projects"
                 className="group relative px-8 py-4 bg-white text-black rounded-full font-bold transition-transform hover:scale-105 flex items-center gap-2"
             >
-                View my Work
+                {t.hero.ctaWork}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             
             <a 
                 href="/assets/documents/KI_Armel_Stephane_Novak.pdf"
                 target="_blank"
+                rel="noreferrer"
                 className="px-8 py-4 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-full font-medium transition-colors flex items-center gap-2 backdrop-blur-sm"
             >
-                <Download size={18} /> Download CV
+                <Download size={18} /> {t.hero.ctaCv}
             </a>
             </motion.div>
         </div>

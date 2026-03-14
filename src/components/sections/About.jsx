@@ -1,14 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code, Database, Globe } from 'lucide-react';
+import { ArrowRight, Code, Database } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
-import { profile } from '../../data/profile';
+import { useLanguage } from '../../context/LanguageContext';
 
 const About = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="py-20 px-6 bg-dark overflow-hidden">
             <div className="max-w-6xl mx-auto">
-                <SectionTitle title="About" subtitle="Who am I?" />
+                <SectionTitle title={t.about.sectionTitle} subtitle={t.about.sectionSubtitle} />
 
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                     
@@ -44,18 +46,18 @@ const About = () => {
                         className="flex-1"
                     >
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                            <span className="text-primary">Data & AI</span> Engineer with an entrepreneurial spirit.
+                            <span className="text-primary">{t.about.headingPrefix}</span> {t.about.headingSuffix}
                         </h3>
                         
                         <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                            I don't just code models. I strive to understand how <strong>Data</strong> can solve real business problems.
+                            {t.about.paragraph1}
                         </p>
 
                         <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            Currently an engineering student at <strong>Telecom Nancy</strong>, I combine the scientific rigor from my Preparatory Classes with the pragmatic vision I gained as the <strong>CEO of Axiane Agency</strong>.
+                            {t.about.paragraph2}
                             <br /><br />
                             <span className="text-sm italic opacity-80">
-                                🚀 Fun fact: When I'm not coding, I'm solving a <strong>Rubik's Cube</strong>, playing competitive <strong>Basketball</strong>, or exploring new cultures (I speak French, English, and learning Japanese).
+                                {t.about.funFact}
                             </span>
                         </p>
 
@@ -63,18 +65,18 @@ const About = () => {
                         <div className="grid grid-cols-2 gap-6 mb-8">
                             <div className="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
                                 <Database className="text-accent mb-2" size={24} />
-                                <h4 className="font-bold text-white">Data Analysis</h4>
-                                <p className="text-sm text-gray-500">Pandas, SQL, Viz</p>
+                                <h4 className="font-bold text-white">{t.about.stat1Title}</h4>
+                                <p className="text-sm text-gray-500">{t.about.stat1Text}</p>
                             </div>
                             <div className="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
                                 <Code className="text-primary mb-2" size={24} />
-                                <h4 className="font-bold text-white">Engineering</h4>
-                                <p className="text-sm text-gray-500">Python, React, API</p>
+                                <h4 className="font-bold text-white">{t.about.stat2Title}</h4>
+                                <p className="text-sm text-gray-500">{t.about.stat2Text}</p>
                             </div>
                         </div>
 
                         <a href="#contact" className="inline-flex items-center gap-2 text-primary font-bold hover:text-white transition-colors">
-                            Let's talk about your project <ArrowRight size={18} />
+                            {t.about.cta} <ArrowRight size={18} />
                         </a>
                     </motion.div>
 

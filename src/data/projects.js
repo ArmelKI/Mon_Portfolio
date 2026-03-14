@@ -23,7 +23,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: " My Portfolio(This Site)",
+    title: "My Portfolio (This Site)",
     category: "web",
     image: "/assets/images/Site.png",
     techs: ["React", "Framer Motion", "Tailwind"],

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Users, HeartHandshake, Award, ExternalLink } from 'lucide-react';
 import { experiences } from '../../data/experiences';
 import SectionTitle from '../ui/SectionTitle';
+import { useLanguage } from '../../context/LanguageContext';
 
 const TimelineItem = ({ item, index }) => {
     const getIcon = (type) => {
@@ -74,21 +75,28 @@ const TimelineItem = ({ item, index }) => {
 };
 
 const Timeline = () => {
+    const { t } = useLanguage();
+    const localizedItems = experiences.map((item) => ({
+        ...item,
+        ...t.timeline.items?.[item.id],
+        tags: t.timeline.items?.[item.id]?.tags ?? item.tags
+    }));
+
     // Automatically separate data
-    const education = experiences.filter(item => ['school', 'award'].includes(item.type));
-    const work = experiences.filter(item => ['work', 'asso', 'volunteering'].includes(item.type));
+    const education = localizedItems.filter(item => ['school', 'award'].includes(item.type));
+    const work = localizedItems.filter(item => ['work', 'asso', 'volunteering'].includes(item.type));
 
     return (
         <section className="py-20 px-6 bg-dark" id="timeline">
             <div className="max-w-6xl mx-auto">
-                <SectionTitle title="My Journey" subtitle="Path to Engineering" />
+                <SectionTitle title={t.timeline.sectionTitle} subtitle={t.timeline.sectionSubtitle} />
 
                 <div className="grid md:grid-cols-2 gap-12 md:gap-20">
                     
                     {/* Column 1: Professional & Association Experience */}
                     <div>
                         <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                            <Briefcase className="text-primary" /> Experience
+                            <Briefcase className="text-primary" /> {t.timeline.experience}
                         </h3>
                         <div className="space-y-2">
                             {work.map((item, index) => (
@@ -100,7 +108,7 @@ const Timeline = () => {
                     {/* Column 2: Education & Awards */}
                     <div>
                         <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                            <GraduationCap className="text-accent" /> Education
+                            <GraduationCap className="text-accent" /> {t.timeline.education}
                         </h3>
                         <div className="space-y-2">
                             {education.map((item, index) => (
