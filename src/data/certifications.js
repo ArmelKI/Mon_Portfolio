@@ -16,6 +16,7 @@ export const certifications = [
     },
     {
         id: 2,
+        featured: true,
         title: "Python Data Analytics",
         provider: "Meta",
         date: "April 15, 2025",
@@ -28,6 +29,7 @@ export const certifications = [
     },
     {
         id: 3,
+        featured: true,
         title: "Introduction to Data Analytics in Google Cloud",
         provider: "Google Cloud",
         date: "Dec 26, 2024",
@@ -40,6 +42,7 @@ export const certifications = [
     },
     {
         id: 4,
+        featured: true,
         title: "Data Analysis with Spreadsheets and SQL",
         provider: "Meta",
         date: "Jan 6, 2025",
@@ -64,6 +67,7 @@ export const certifications = [
     },
     {
         id: 6,
+        featured: true,
         title: "Foundations: Data, Data, Everywhere",
         provider: "Google",
         date: "Dec 26, 2024",
@@ -204,6 +208,7 @@ export const certifications = [
     // =================================================================
     {
         id: 18,
+        featured: true,
         title: "Introduction to Cybersecurity Careers",
         provider: "IBM",
         date: "Dec 21, 2024",
@@ -216,6 +221,7 @@ export const certifications = [
     },
     {
         id: 19,
+        featured: true,
         title: "Foundations of Cybersecurity",
         provider: "Google",
         date: "Dec 14, 2024",
@@ -228,6 +234,7 @@ export const certifications = [
     },
     {
         id: 20,
+        featured: true,
         title: "Connect and Protect: Networks",
         provider: "Google",
         date: "Jan 6, 2025",
@@ -362,6 +369,7 @@ export const certifications = [
     },
     {
         id: 31,
+        featured: true,
         title: "Project Management (Fundamentals)",
         provider: "Centrale Lille (MOOC GdP)",
         date: "2025",

@@ -92,14 +92,20 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-dark border-b border-white/10 p-6 flex flex-col gap-4 shadow-xl">
+        <div id="mobile-menu" className="md:hidden absolute top-full left-0 w-full bg-dark border-b border-white/10 p-6 flex flex-col gap-4 shadow-xl">
           {navLinks.map((link) => (
             <a 
               key={link.key}

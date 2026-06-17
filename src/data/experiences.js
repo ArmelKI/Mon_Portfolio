@@ -1,25 +1,6 @@
 export const experiences = [
   // --- CURRENT ROLES (Sept 2025 - Present) ---
   {
-    id: 1,
-    role: "Founder & Tech Lead",
-    company: "AXIANE Agency",
-    url: "https://axianeagency.cloud",
-    date: "Sept 2025 - Present",
-    type: "work",
-    description: "Leading a digital agency specializing in AI solutions, data analytics, and web development. Managing a multidisciplinary team to support companies in their digital transformation.",
-    tags: ["Entrepreneurship", "AI Solutions", "Management"]
-  },
-  {
-    id: 2,
-    role: "Founder",
-    company: "KIA Consulting",
-    date: "Sept 2025 - Present",
-    type: "work",
-    description: "Founded an academic consulting agency assisting African students with international mobility (Canada, France, USA, Asia). Strategic guidance and network facilitation.",
-    tags: ["Consulting", "Education", "Strategy"]
-  },
-  {
     id: 3,
     role: "Project Manager",
     company: "Telecom Nancy Services",
@@ -38,7 +19,7 @@ export const experiences = [
     tags: ["AI & Data", "Computer Science", "Maths"]
   },
 
-  // --- SUMMER 2025 (The "Power" Summer) ---
+  // --- SUMMER 2025 ---
   {
     id: 5,
     role: "Gold Laureate (1st/200+)",
@@ -63,7 +44,7 @@ export const experiences = [
     id: 7,
     role: "President of Software Engineering Club",
     company: "CPGE MENAPLN Bobo",
-    date: "Feb 2024 - Aug 2025", // J'ai mis une date de fin logique vu que tu es parti à Nancy
+    date: "Feb 2024 - Aug 2025",
     type: "asso",
     description: "Led a community of passionate developers. Organized technical workshops, hackathons, and fostered innovation among students.",
     tags: ["Leadership", "Event Planning", "Mentoring"]

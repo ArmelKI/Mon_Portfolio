@@ -16,12 +16,12 @@ const App = () => {
       
       <main>
         <div id="hero"><Hero /></div>
-        <div id="about"><About /></div>
-        <div id="timeline"><Timeline /></div>
-        <div id="skills"><Skills /></div>
-        <div id="projects"><Projects /></div>
-        <div id="certifications"><Certifications /></div>
-        <div id="contact"><Contact /></div>
+        <div id="about" className="scroll-mt-20"><About /></div>
+        <div id="timeline" className="scroll-mt-20"><Timeline /></div>
+        <div id="skills" className="scroll-mt-20"><Skills /></div>
+        <div id="projects" className="scroll-mt-20"><Projects /></div>
+        <div id="certifications" className="scroll-mt-20"><Certifications /></div>
+        <div id="contact" className="scroll-mt-20"><Contact /></div>
       </main>
 
       <Footer />

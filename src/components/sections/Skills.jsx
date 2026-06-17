@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Code, Terminal, Database } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
+import Marquee from '../ui/Marquee';
 import { useLanguage } from '../../context/LanguageContext';
 
 const SkillCard = ({ title, icon: Icon, skills, className, color }) => (
@@ -26,6 +27,16 @@ const SkillCard = ({ title, icon: Icon, skills, className, color }) => (
 const Skills = () => {
     const { t } = useLanguage();
     const cards = t.skills.cards;
+
+    // Flatten every skill across cards (de-duplicated) for the scrolling marquee.
+    const marqueeItems = [
+        ...new Set([
+            ...cards.data.skills,
+            ...cards.web.skills,
+            ...cards.databases.skills,
+            ...cards.tools.skills
+        ])
+    ];
 
     return (
         <section className="py-24 px-6 relative overflow-hidden">
@@ -71,6 +82,11 @@ const Skills = () => {
                         skills={cards.tools.skills}
                     />
 
+                </div>
+
+                {/* Scrolling tech marquee */}
+                <div className="mt-12">
+                    <Marquee items={marqueeItems} />
                 </div>
             </div>
         </section>

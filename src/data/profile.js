@@ -1,11 +1,11 @@
 export const profile = {
   name: "Armel Stéphane Novak KI",
-  role: "AI Engineering Student & Entrepreneur",
-  bio: "Computer Engineering student at TELECOM Nancy passionate about AI, Data Science, and Cybersecurity. Founder of Axiane Agency and KIA Consulting. I aim to leverage technology to solve critical challenges in education, health, and sustainable development.",
+  role: "AI & Data Engineering Student",
+  bio: "Computer Engineering student at TELECOM Nancy, passionate about AI, Data Science, and software engineering. I aim to leverage technology to solve concrete problems in education, health, and sustainable development.",
   email: "kiarmelstephanenovak@gmail.com",
   socials: {
     github: "https://github.com/ArmelKI",
     linkedin: "https://www.linkedin.com/in/armel-stephane-novak-ki",
-    discord: "ArmelKI" 
+    discord: "ArmelKI"
   }
 };

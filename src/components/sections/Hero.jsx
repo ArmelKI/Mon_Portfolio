@@ -1,38 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, ChevronDown, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const Hero = () => {
-    const { t } = useLanguage();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { t } = useLanguage();
+  const spotlightRef = useRef(null);
 
+  // Update the spotlight via a direct DOM style write on mouse move,
+  // so the cursor never triggers a React re-render of the whole section.
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      const node = spotlightRef.current;
+      if (!node) return;
+      node.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(59,130,246,0.15), transparent 40%)`;
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-dark">
-        
+
         {/* Background Grid & Spotlight */}
-        <div 
-            className="absolute inset-0 pointer-events-none"
-            style={{
-            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59,130,246,0.15), transparent 40%)`,
-            }}
+        <div ref={spotlightRef} className="absolute inset-0 pointer-events-none" />
+        <div className="absolute inset-0 z-0 opacity-[0.15]"
+            style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}
         />
-        <div className="absolute inset-0 z-0 opacity-[0.15]" 
-            style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
-        />
-        
+
         <div className="z-10 text-center px-4 max-w-5xl">
-            
+
             {/* Badge */}
-            <motion.div 
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-mono mb-8"
@@ -45,7 +44,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Title */}
-            <motion.h1 
+            <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -58,32 +57,32 @@ const Hero = () => {
             </motion.h1>
 
             {/* Bio */}
-            <motion.p 
+            <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-            {t.hero.bioLine1} <strong>Telecom Nancy</strong> {t.hero.bioLine2} <strong>Axiane Agency</strong>.
+            {t.hero.bioLine1}<strong className="text-white">Telecom Nancy</strong>{t.hero.bioLine2}
             <br />{t.hero.bioLine3}
             </motion.p>
 
             {/* Buttons */}
-            <motion.div 
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
-            <a 
+            <a
                 href="#projects"
                 className="group relative px-8 py-4 bg-white text-black rounded-full font-bold transition-transform hover:scale-105 flex items-center gap-2"
             >
                 {t.hero.ctaWork}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            
-            <a 
+
+            <a
                 href="/assets/documents/KI_Armel_Stephane_Novak.pdf"
                 target="_blank"
                 rel="noreferrer"
@@ -95,7 +94,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Down */}
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}

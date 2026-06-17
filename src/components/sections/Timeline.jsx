@@ -20,10 +20,10 @@ const TimelineItem = ({ item, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="relative pl-8 border-l-2 border-gray-800 group"
+            className="relative pl-8 pb-8 border-l-2 border-gray-800 last:pb-1 group"
         >
-            {/* Icon on the line */}
-            <div className={`absolute -left-[11px] top-0 p-1.5 rounded-full border-2 transition-all duration-300 bg-dark z-10
+            {/* Icon centered on the line */}
+            <div className={`absolute left-0 top-0 -translate-x-1/2 p-1.5 rounded-full border-2 transition-all duration-300 bg-dark z-10
                 ${item.type === 'work' ? 'border-primary text-primary shadow-[0_0_10px_rgba(59,130,246,0.3)]' : 
                     item.type === 'award' ? 'border-accent text-accent' : 
                     'border-gray-700 text-gray-400 group-hover:border-gray-500'}
@@ -32,7 +32,7 @@ const TimelineItem = ({ item, index }) => {
             </div>
 
             {/* Content */}
-            <div className="mb-8">
+            <div>
                 <span className="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded inline-block mb-2">
                     {item.date}
                 </span>
@@ -87,7 +87,7 @@ const Timeline = () => {
     const work = localizedItems.filter(item => ['work', 'asso', 'volunteering'].includes(item.type));
 
     return (
-        <section className="py-20 px-6 bg-dark" id="timeline">
+        <section className="py-20 px-6 bg-dark">
             <div className="max-w-6xl mx-auto">
                 <SectionTitle title={t.timeline.sectionTitle} subtitle={t.timeline.sectionSubtitle} />
 
@@ -98,7 +98,7 @@ const Timeline = () => {
                         <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                             <Briefcase className="text-primary" /> {t.timeline.experience}
                         </h3>
-                        <div className="space-y-2">
+                        <div>
                             {work.map((item, index) => (
                                 <TimelineItem key={item.id} item={item} index={index} />
                             ))}
@@ -110,7 +110,7 @@ const Timeline = () => {
                         <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                             <GraduationCap className="text-accent" /> {t.timeline.education}
                         </h3>
-                        <div className="space-y-2">
+                        <div>
                             {education.map((item, index) => (
                                 <TimelineItem key={item.id} item={item} index={index} />
                             ))}

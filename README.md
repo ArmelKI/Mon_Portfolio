@@ -1,29 +1,29 @@
-````markdown
-# ⚡ Armel KI - Data & AI Portfolio
+# ⚡ Armel KI — AI & Data Portfolio
 
-![Portfolio Preview](public/assets/images/profil-armel.jpg) 
-Modern, dark-themed portfolio built for an **Aspiring AI Engineer & Entrepreneur**.  
-Designed to showcase Data Science projects, Certifications, and professional milestones with a clean, high-performance UI.
+![Portfolio Preview](public/assets/images/Site.png)
 
-🔗 **Live Demo:** armel-ki-portfolio.vercel.app
+Modern, dark-themed portfolio for an **AI & Data Engineering student**.
+Designed to showcase Data Science projects, certifications, and academic milestones with a clean, high-performance UI.
+
+🔗 **Live Demo:** [armel-ki-portfolio.vercel.app](https://armel-ki-portfolio.vercel.app)
 
 ---
 
 ## 🚀 Features
 
-- **🎨 Modern UI/UX:** Dark mode aesthetic with "Glassmorphism" effects and "Spotlight" animations.
-- **🍱 Bento Grid Layout:** Asymmetric grid to showcase Technical Skills (Data, Web, DevOps).
-- **🎓 Interactive Timeline:** Visual journey through Education, Career (Axiane Agency), and Associations.
-- **📂 Project Filtering:** Filter projects by category (Data Science, AI, Web Dev).
-- **📜 Certification Hub:** Dedicated section to view credentials and download PDF certificates.
-- **⚡ High Performance:** Built with Vite for instant loading and 100/100 Lighthouse score.
-- **📱 Fully Responsive:** Optimized for Mobile, Tablet, and Desktop.
+- **🌍 Bilingual (FR / EN):** Full i18n with language detection and persistence.
+- **🎨 Modern UI/UX:** Dark aesthetic with glassmorphism and an interactive spotlight background.
+- **🍱 Bento Grid:** Asymmetric grid to showcase technical skills.
+- **🗺️ Interactive Timeline:** Visual journey through education, experience, and awards.
+- **📂 Project Filtering:** Filter projects by category (Data & AI, Web, Tools).
+- **📜 Certification Hub:** Browse credentials, highlight featured ones, and download PDF certificates.
+- **📱 Fully Responsive:** Optimized for mobile, tablet, and desktop.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Core:** [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Core:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS v3](https://tailwindcss.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide React](https://lucide.dev/)
@@ -33,92 +33,70 @@ Designed to showcase Data Science projects, Certifications, and professional mil
 
 ## 📂 Project Structure
 
-The project follows a **Data-Driven** architecture. Content is separated from logic.
+The project follows a **data-driven** architecture: content is separated from logic.
 
 ```bash
-portfolio-v2/
+Mon_Portfolio/
 ├── public/
-│   └── assets/             # Static files (Images, PDFs)
+│   └── assets/             # Static files (images, PDFs)
 │       ├── documents/      # Certificates & CV
-│       └── images/         # Project screenshots & Profile pic
+│       └── images/         # Project screenshots & profile pic
 ├── src/
 │   ├── components/
 │   │   ├── layout/         # Navbar, Footer
 │   │   ├── sections/       # Hero, About, Skills, Projects, etc.
-│   │   └── ui/             # Reusable UI components (SectionTitle, etc.)
-│   ├── data/               # THE BRAIN (Edit content here)
-│   │   ├── certifications.js
-│   │   ├── experiences.js
-│   │   ├── profile.js      # Global info (Name, Bio, Social links)
-│   │   ├── projects.js
-│   │   └── skills.js
+│   │   └── ui/             # Reusable UI (SectionTitle, etc.)
+│   ├── context/            # LanguageContext (i18n provider)
+│   ├── data/               # Structured content (projects, experiences, certifications)
 │   └── App.jsx
 └── tailwind.config.js
-````
+```
 
------
+---
 
 ## 🏁 Getting Started
 
-### 1\. Clone the repository
-
 ```bash
-git clone [https://github.com/ArmelKI/portfolio-armel.git](https://github.com/ArmelKI/portfolio-armel.git)
-cd portfolio-armel
-```
-
-### 2\. Install dependencies
-
-```bash
+git clone https://github.com/ArmelKI/Mon_Portfolio.git
+cd Mon_Portfolio
 npm install
-```
-
-### 3\. Run the development server
-
-```bash
 npm run dev
 ```
 
 Open `http://localhost:5173` in your browser.
 
------
+---
 
 ## 📝 Customization
 
-You don't need to touch the React code to update your info. Just edit the files in **`src/data/`**:
+Most content lives in `src/data/` and `src/data/i18n.js` (translatable strings):
 
-  - **Update Personal Info:** Edit `src/data/profile.js`
-  - **Add a Project:** Add an entry to `src/data/projects.js`
-  - **Update Skills:** Modify `src/data/skills.js`
+- **Projects:** add an entry to `src/data/projects.js` (and its FR/EN copy in `i18n.js`).
+- **Experience / timeline:** `src/data/experiences.js` + `i18n.js`.
+- **Certifications:** `src/data/certifications.js` (set `featured: true` to highlight one).
+- **Personal info & socials:** `src/data/profile.js`.
 
-### Adding Images or PDFs
+### Adding images or PDFs
 
-1.  Place your file in `public/assets/...`
-2.  Reference it in your data files using the path string: `"/assets/images/my-file.jpg"`
+1. Place the file in `public/assets/...`
+2. Reference it in your data files as a path string: `"/assets/images/my-file.png"`
 
------
+---
 
 ## 🚢 Deployment
 
-This project is optimized for **Vercel**.
+Optimized for **Vercel**: push to GitHub, import the repo, and deploy.
 
-1.  Push your code to GitHub.
-2.  Import the repo on Vercel.
-3.  Click **Deploy**.
-4.  Done\! 🚀
-
------
+---
 
 ## 👤 Author
 
-**Armel Stéphane Novak KI** *Engineering Student @ Télécom Nancy | CEO Axiane Agency*
+**Armel Stéphane Novak KI** — Engineering Student @ Télécom Nancy
 
-  - 💼 [LinkedIn](www.linkedin.com/in/armel-stephane-novak-ki)
-  - 🐙 [GitHub](https://github.com/ArmelKI)
-  - 📧 [Email](mailto:kiarmelstephanenovak@gmail.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/armel-stephane-novak-ki)
+- 🐙 [GitHub](https://github.com/ArmelKI)
+- 📧 [Email](mailto:kiarmelstephanenovak@gmail.com)
 
------
+---
 
-*Made with ❤️ and ☕ in Nancy, France.*
-
-````
+*Made in Nancy, France.*

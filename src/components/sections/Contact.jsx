@@ -1,42 +1,63 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, MessageSquare } from 'lucide-react';
+import { Mail, Linkedin, Github, MessageSquare, Check, Copy } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import { profile } from '../../data/profile';
 import { useLanguage } from '../../context/LanguageContext';
 
-const ContactCard = ({ icon: Icon, title, value, link, color, isCopyOnly, tagLabel }) => (
-  <div className="relative group">
-    {isCopyOnly ? (
-      <div className="flex items-center gap-4 p-6 bg-card border border-gray-800 rounded-2xl cursor-default">
-         <div className={`p-4 rounded-xl bg-white/5 ${color}`}>
-          <Icon size={24} />
-        </div>
-        <div>
-          <h3 className="text-sm text-gray-400 font-mono mb-1">{title}</h3>
-          <p className="text-lg font-bold text-white flex items-center gap-2">
-            {value} 
-            <span className="text-xs text-gray-600 font-normal border border-gray-700 px-2 py-0.5 rounded">{tagLabel}</span>
-          </p>
-        </div>
-      </div>
-    ) : (
-      <a 
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center gap-4 p-6 bg-card border border-gray-800 rounded-2xl hover:border-primary/50 hover:bg-primary/5 transition-all group"
+const ContactCard = ({ icon: Icon, title, value, link, color, isCopyOnly, tagLabel, copiedLabel }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Clipboard API unavailable (e.g. insecure context) — fail silently.
+    }
+  };
+
+  if (isCopyOnly) {
+    return (
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={`${title}: ${value} — ${copiedLabel}`}
+        className="w-full text-left flex items-center gap-4 p-6 bg-card border border-gray-800 rounded-2xl hover:border-primary/50 hover:bg-primary/5 transition-all group"
       >
         <div className={`p-4 rounded-xl bg-white/5 ${color} group-hover:scale-110 transition-transform`}>
           <Icon size={24} />
         </div>
-        <div>
+        <div className="min-w-0">
           <h3 className="text-sm text-gray-400 font-mono mb-1">{title}</h3>
-          <p className="text-lg font-bold text-white group-hover:text-primary transition-colors">{value}</p>
+          <p className="text-lg font-bold text-white flex items-center gap-2 flex-wrap">
+            {value}
+            <span className="text-xs text-gray-500 font-normal border border-gray-700 px-2 py-0.5 rounded inline-flex items-center gap-1">
+              {copied ? (<><Check size={12} className="text-green-400" /> {copiedLabel}</>) : (<><Copy size={12} /> {tagLabel}</>)}
+            </span>
+          </p>
         </div>
-      </a>
-    )}
-  </div>
-);
+      </button>
+    );
+  }
+
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center gap-4 p-6 bg-card border border-gray-800 rounded-2xl hover:border-primary/50 hover:bg-primary/5 transition-all group"
+    >
+      <div className={`p-4 rounded-xl bg-white/5 ${color} group-hover:scale-110 transition-transform`}>
+        <Icon size={24} />
+      </div>
+      <div>
+        <h3 className="text-sm text-gray-400 font-mono mb-1">{title}</h3>
+        <p className="text-lg font-bold text-white group-hover:text-primary transition-colors">{value}</p>
+      </div>
+    </a>
+  );
+};
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -69,40 +90,41 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {/* Email */}
-          <ContactCard 
-            icon={Mail} 
+          <ContactCard
+            icon={Mail}
             title={t.contact.cardEmail}
-            value="kiarmelstephanenovak@gmail.com" 
+            value={profile.email}
             link={`mailto:${profile.email}`}
             color="text-red-400"
           />
-          
+
           {/* LinkedIn */}
-          <ContactCard 
-            icon={Linkedin} 
+          <ContactCard
+            icon={Linkedin}
             title={t.contact.cardLinkedin}
-            value="Armel Stéphane Novak KI" 
+            value="Armel Stéphane Novak KI"
             link={profile.socials.linkedin}
             color="text-blue-500"
           />
-          
+
           {/* GitHub */}
-          <ContactCard 
-            icon={Github} 
+          <ContactCard
+            icon={Github}
             title={t.contact.cardGithub}
-            value="@ArmelKI" 
+            value="@ArmelKI"
             link={profile.socials.github}
             color="text-white"
           />
-          
-          {/* Discord - Mode just "Username" */}
-          <ContactCard 
-            icon={MessageSquare} 
+
+          {/* Discord - click to copy username */}
+          <ContactCard
+            icon={MessageSquare}
             title={t.contact.cardDiscord}
             value={profile.socials.discord}
             isCopyOnly={true}
             color="text-indigo-400"
             tagLabel={t.contact.discordTag}
+            copiedLabel={t.contact.discordCopied}
           />
         </div>
 

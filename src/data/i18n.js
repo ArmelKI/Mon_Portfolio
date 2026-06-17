@@ -10,12 +10,12 @@ export const i18n = {
       contact: 'Contact'
     },
     hero: {
-      badge: 'Available for collaborations, consulting, and high-impact projects',
-      titleLead: 'Aspiring',
-      titleHighlight: 'AI Engineer.',
-      bioLine1: 'Engineering Student at',
-      bioLine2: '& Tech Lead at',
-      bioLine3: 'I bridge the gap between mathematical theory and real-world applications.',
+      badge: 'Open to internships, collaborations, and high-impact projects',
+      titleLead: 'AI & Data',
+      titleHighlight: 'Engineering Student.',
+      bioLine1: 'Engineering student at ',
+      bioLine2: ', specializing in Artificial Intelligence and Data Science.',
+      bioLine3: 'I turn mathematical rigor into concrete, useful applications.',
       ctaWork: 'View my Work',
       ctaCv: 'Download CV'
     },
@@ -24,9 +24,10 @@ export const i18n = {
       sectionSubtitle: 'Who am I?',
       headingPrefix: 'Data & AI',
       headingSuffix: 'for real-world impact.',
-      paragraph1: 'I am not interested in building models for their own sake. What matters to me is turning data into concrete, useful solutions to real business problems.',
+      paragraph1:
+        'I am not interested in building models for their own sake. What matters to me is turning data into concrete, useful solutions to real problems.',
       paragraph2:
-        'At Telecom Nancy, I combine the scientific rigor of my preparatory studies with the entrepreneurial perspective I developed through Axiane Agency.',
+        'At Telecom Nancy, I combine the scientific rigor of my preparatory-school years with hands-on engineering — designing and shipping data and software projects end to end.',
       funFact:
         "Beyond tech, I enjoy solving Rubik's Cubes, playing competitive basketball, and exploring new cultures. I speak French and English, and I am currently learning Japanese.",
       stat1Title: 'Data Analysis',
@@ -34,12 +35,6 @@ export const i18n = {
       stat2Title: 'Engineering',
       stat2Text: 'Python, React, API',
       cta: "Let's talk about your project"
-    },
-    timeline: {
-      sectionTitle: 'My Journey',
-      sectionSubtitle: 'Path to Engineering',
-      experience: 'Experience',
-      education: 'Education'
     },
     skills: {
       sectionTitle: 'Technical Arsenal',
@@ -62,7 +57,7 @@ export const i18n = {
         },
         web: {
           title: 'Web Development',
-          skills: ['React.js', 'Tailwind CSS', 'HTML/CSS', 'JavaScript']
+          skills: ['React.js', 'Tailwind CSS', 'HTML/CSS', 'JavaScript', 'TypeScript']
         },
         databases: {
           title: 'Databases',
@@ -79,16 +74,18 @@ export const i18n = {
       sectionSubtitle: 'Selected Work & Case Studies',
       filters: {
         all: 'All',
-        data: 'Data Science',
-        ai: 'A.I.',
-        web: 'Web Development',
-        management: 'Business & PM'
+        data: 'Data & AI',
+        web: 'Web',
+        tools: 'Tools'
       },
       categoryBadges: {
         data: 'Data',
-        web: 'Web'
+        web: 'Web',
+        tools: 'Tool'
       },
       viewCode: 'View Code',
+      private: 'Private',
+      privateNote: 'Private repository',
       empty: 'No projects available in this category yet.',
       items: {
         1: {
@@ -106,6 +103,26 @@ export const i18n = {
         4: {
           description:
             'Automated ETL pipeline using live OWID data to compare infection trends across four countries with rolling averages for clearer analysis.'
+        },
+        5: {
+          description:
+            'Exploratory analysis of the Titanic dataset: data cleaning, visualization of key survival factors, and feature preparation for machine learning.'
+        },
+        6: {
+          description:
+            'Full-stack transport-booking platform connecting passengers with bus companies in Burkina Faso, with a Node.js/Express API and a Flutter mobile app.'
+        },
+        7: {
+          description:
+            'Digital menu and online-ordering interface designed for African restaurants, built with React and TypeScript.'
+        },
+        8: {
+          description:
+            'Command-line utility in Python to batch-compress and optimize files efficiently.'
+        },
+        9: {
+          description:
+            'Python automation bot that schedules and publishes content across social platforms.'
         }
       }
     },
@@ -115,20 +132,6 @@ export const i18n = {
       experience: 'Experience',
       education: 'Education',
       items: {
-        1: {
-          role: 'Founder & Tech Lead',
-          date: 'Sept 2025 - Present',
-          description:
-            'Leading a digital agency focused on AI solutions, data analytics, and web development. Managing a multidisciplinary team to help organizations deliver meaningful digital transformation.',
-          tags: ['Entrepreneurship', 'AI Solutions', 'Management']
-        },
-        2: {
-          role: 'Founder',
-          date: 'Sept 2025 - Present',
-          description:
-            'Founded an academic consulting agency assisting African students with international mobility (Canada, France, USA, Asia). Strategic guidance and network facilitation.',
-          tags: ['Consulting', 'Education', 'Strategy']
-        },
         3: {
           role: 'Project Manager',
           date: 'Sept 2025 - Present',
@@ -204,8 +207,10 @@ export const i18n = {
     certifications: {
       sectionTitle: 'Certifications',
       sectionSubtitle: 'Diplomas & Credentials',
+      featuredBadge: 'Featured',
       filters: {
         all: 'All',
+        featured: '★ Featured',
         dataAi: 'Data & AI',
         cyberCloud: 'Cyber & Cloud',
         dev: 'Dev & Mobile',
@@ -242,9 +247,10 @@ export const i18n = {
       cardGithub: 'GitHub',
       cardDiscord: 'Discord',
       discordTag: 'Username',
+      discordCopied: 'Copied!',
       openTitle: 'Let’s Build Something Valuable',
       openText:
-        'I am currently focused on building ambitious, useful projects. I am available for freelance work, technical collaborations, and strategic conversations through Axiane Agency.',
+        'I am currently focused on building ambitious, useful projects. I am open to internships, technical collaborations, and conversations around AI, data, and software.',
       formName: 'Your name',
       formEmail: 'Your email',
       formMessage: 'Your message',
@@ -255,7 +261,7 @@ export const i18n = {
       emailMessageLabel: 'Message'
     },
     footer: {
-      baseline: 'Code with React & Tailwind.'
+      baseline: 'Built with React & Tailwind.'
     }
   },
   fr: {
@@ -269,12 +275,12 @@ export const i18n = {
       contact: 'Contact'
     },
     hero: {
-      badge: 'Disponible pour des collaborations, du conseil et des projets à impact',
-      titleLead: 'Ingénieur',
-      titleHighlight: 'IA en devenir.',
-      bioLine1: 'Étudiant ingénieur à',
-      bioLine2: '& Tech Lead chez',
-      bioLine3: 'Je relie la rigueur mathématique aux applications concrètes du terrain.',
+      badge: 'Ouvert aux stages, collaborations et projets à fort impact',
+      titleLead: 'Étudiant ingénieur',
+      titleHighlight: 'IA & Data.',
+      bioLine1: 'Étudiant ingénieur à ',
+      bioLine2: ', spécialisé en intelligence artificielle et data science.',
+      bioLine3: 'Je transforme la rigueur mathématique en applications concrètes et utiles.',
       ctaWork: 'Voir mes projets',
       ctaCv: 'Télécharger le CV'
     },
@@ -283,22 +289,17 @@ export const i18n = {
       sectionSubtitle: 'Qui suis-je ?',
       headingPrefix: 'Data & IA',
       headingSuffix: 'au service de problèmes concrets.',
-      paragraph1: 'Je ne cherche pas seulement à construire des modèles. Ce qui m’intéresse, c’est la manière dont la data peut produire de la valeur et résoudre de vrais enjeux métier.',
+      paragraph1:
+        'Je ne cherche pas seulement à construire des modèles. Ce qui m’intéresse, c’est la manière dont la data peut produire de la valeur et résoudre de vrais problèmes.',
       paragraph2:
-        "À Telecom Nancy, je m’appuie sur la rigueur scientifique acquise en classes préparatoires et sur la vision terrain développée à travers Axiane Agency.",
+        'À Telecom Nancy, je combine la rigueur scientifique acquise en classes préparatoires avec une approche très concrète de l’ingénierie : concevoir et livrer des projets data et logiciels de bout en bout.',
       funFact:
-        "En dehors du code, j’aime le Rubik’s Cube, le basketball en compétition et la découverte de nouvelles cultures. Je parle français et anglais, et j’apprends actuellement le japonais.",
+        'En dehors du code, j’aime le Rubik’s Cube, le basketball en compétition et la découverte de nouvelles cultures. Je parle français et anglais, et j’apprends actuellement le japonais.',
       stat1Title: 'Analyse de données',
       stat1Text: 'Pandas, SQL, Viz',
       stat2Title: 'Ingénierie',
       stat2Text: 'Python, React, API',
       cta: 'Discutons de votre projet'
-    },
-    timeline: {
-      sectionTitle: 'Mon parcours',
-      sectionSubtitle: 'Du parcours scientifique à l’ingénierie',
-      experience: 'Expérience',
-      education: 'Formation'
     },
     skills: {
       sectionTitle: 'Arsenal technique',
@@ -321,7 +322,7 @@ export const i18n = {
         },
         web: {
           title: 'Développement Web',
-          skills: ['React.js', 'Tailwind CSS', 'HTML/CSS', 'JavaScript']
+          skills: ['React.js', 'Tailwind CSS', 'HTML/CSS', 'JavaScript', 'TypeScript']
         },
         databases: {
           title: 'Bases de données',
@@ -338,21 +339,23 @@ export const i18n = {
       sectionSubtitle: 'Sélection de projets & études de cas',
       filters: {
         all: 'Tous',
-        data: 'Data Science',
-        ai: 'I.A.',
-        web: 'Développement Web',
-        management: 'Business & Pilotage'
+        data: 'Data & IA',
+        web: 'Web',
+        tools: 'Outils'
       },
       categoryBadges: {
         data: 'Data',
-        web: 'Web'
+        web: 'Web',
+        tools: 'Outil'
       },
       viewCode: 'Voir le code',
+      private: 'Privé',
+      privateNote: 'Dépôt privé',
       empty: 'Aucun projet dans cette catégorie pour le moment.',
       items: {
         1: {
           description:
-            "Analyse complète de l’évolution du catalogue Netflix, avec refonte du pipeline pour fiabiliser le nettoyage des données et produire des visualisations utiles à la décision."
+            'Analyse complète de l’évolution du catalogue Netflix, avec refonte du pipeline pour fiabiliser le nettoyage des données et produire des visualisations utiles à la décision.'
         },
         2: {
           description:
@@ -365,6 +368,26 @@ export const i18n = {
         4: {
           description:
             'Pipeline ETL automatisé basé sur les données OWID en direct, comparant les tendances d’infection de quatre pays à l’aide de moyennes glissantes pour une lecture plus claire.'
+        },
+        5: {
+          description:
+            'Analyse exploratoire du jeu de données Titanic : nettoyage, visualisation des facteurs clés de survie et préparation des variables pour le machine learning.'
+        },
+        6: {
+          description:
+            'Plateforme full-stack de réservation de transport reliant les voyageurs aux compagnies de bus au Burkina Faso, avec une API Node.js/Express et une application mobile Flutter.'
+        },
+        7: {
+          description:
+            'Interface de menu numérique et de commande en ligne pensée pour la restauration africaine, développée en React et TypeScript.'
+        },
+        8: {
+          description:
+            'Utilitaire Python en ligne de commande pour compresser et optimiser des fichiers par lots, efficacement.'
+        },
+        9: {
+          description:
+            'Bot d’automatisation Python qui programme et publie du contenu sur les réseaux sociaux.'
         }
       }
     },
@@ -374,20 +397,6 @@ export const i18n = {
       experience: 'Expérience',
       education: 'Formation',
       items: {
-        1: {
-          role: 'Fondateur & Tech Lead',
-          date: "Sept. 2025 - Aujourd'hui",
-          description:
-            'Direction d’une agence digitale spécialisée en IA, analyse de données et développement web. Pilotage d’une équipe pluridisciplinaire pour accompagner la transformation numérique des organisations.',
-          tags: ['Entrepreneuriat', 'Solutions IA', 'Management']
-        },
-        2: {
-          role: 'Fondateur',
-          date: "Sept. 2025 - Aujourd'hui",
-          description:
-            'Création d’une structure de conseil académique dédiée à l’accompagnement des étudiants africains dans leurs projets de mobilité internationale (Canada, France, USA, Asie).',
-          tags: ['Conseil', 'Éducation', 'Stratégie']
-        },
         3: {
           role: 'Chef de projet',
           date: "Sept. 2025 - Aujourd'hui",
@@ -463,8 +472,10 @@ export const i18n = {
     certifications: {
       sectionTitle: 'Certifications',
       sectionSubtitle: 'Diplômes & Attestations',
+      featuredBadge: 'À la une',
       filters: {
         all: 'Toutes',
+        featured: '★ À la une',
         dataAi: 'Data & IA',
         cyberCloud: 'Cyber & Cloud',
         dev: 'Dev & Mobile',
@@ -474,8 +485,8 @@ export const i18n = {
       verify: 'Vérifier',
       empty: 'Aucune certification dans cette catégorie.',
       items: {
-        1: { date: '10 mai 2025', description: "Application concrète des LLM (Gemini/Bard) à la génération de code et à l’automatisation de tâches." },
-        2: { date: '15 avril 2025', description: "Exploration, nettoyage et visualisation avancés de jeux de données complexes au sein de l’écosystème Python." },
+        1: { date: '10 mai 2025', description: 'Application concrète des LLM (Gemini/Bard) à la génération de code et à l’automatisation de tâches.' },
+        2: { date: '15 avril 2025', description: 'Exploration, nettoyage et visualisation avancés de jeux de données complexes au sein de l’écosystème Python.' },
         3: { date: '26 déc. 2024', description: 'Traitement et analyse de jeux de données massifs (Big Data) directement sur Google Cloud.' },
         4: { date: '6 janv. 2025', description: 'Extraction de données via des requêtes SQL avancées et conception de tableaux de bord orientés décision.' },
         5: { date: '4 janv. 2025', description: 'Vue d’ensemble structurée du métier de data analyst, de la méthode d’analyse à la restitution des résultats.' },
@@ -490,7 +501,25 @@ export const i18n = {
         14: { date: '10 mai 2025', description: 'Intégration de capacités d’IA générative dans des applications Python.' },
         15: { date: '10 mai 2025', description: 'Conception de prompts efficaces pour améliorer les résultats des modèles de génération de texte et d’images.' },
         16: { date: '10 mai 2025', description: 'Usage de ChatGPT et d’outils IA pour accélérer la recherche scientifique et l’exploration documentaire.' },
-        17: { date: '10 mai 2025', description: 'Utilisation de Bing AI comme levier de productivité et d’assistance au travail intellectuel.' }
+        17: { date: '10 mai 2025', description: 'Utilisation de Bing AI comme levier de productivité et d’assistance au travail intellectuel.' },
+        18: { date: '21 déc. 2024', description: 'Compréhension des vecteurs d’attaque et des stratégies de défense des systèmes d’information.' },
+        19: { date: '14 déc. 2024', description: 'Principes fondamentaux pour sécuriser les réseaux et les données sensibles.' },
+        20: { date: '6 janv. 2025', description: 'Architecture réseau sécurisée et protection contre les intrusions.' },
+        21: { date: 'mai 2025', description: 'Principes de sécurité essentiels pour protéger les données et les applications dans le cloud.' },
+        22: { date: 'mai 2025', description: 'Identifier, évaluer et gérer les risques de sécurité au sein d’une organisation.' },
+        23: { date: '10 mai 2025', description: 'Détection et exploitation des vulnérabilités d’injection de commandes.' },
+        24: { date: '5 févr. 2025', description: 'Bases du développement et du déploiement d’applications mobiles.' },
+        25: { date: '6 févr. 2025', description: 'Bases du développement mobile et du déploiement (badge Credly).' },
+        26: { date: '10 mai 2025', description: 'Maîtrise du terminal Linux, des systèmes de fichiers et des commandes essentielles.' },
+        27: { date: 'mai 2025', description: 'Outils essentiels de l’informatique : systèmes d’exploitation et gestion de bases de données.' },
+        28: { date: '10 mai 2025', description: 'Maîtrise du versioning, des branches, des fusions et des workflows collaboratifs.' },
+        29: { date: '10 mai 2025', description: 'Techniques avancées de modélisation financière pour l’aide à la décision stratégique.' },
+        30: { date: 'mai 2025', description: 'Fondamentaux de l’analyse métier pour faire le lien entre IT et besoins business.' },
+        31: { date: '2025', description: 'Formation complète aux méthodologies et outils de gestion de projet.' },
+        32: { date: '2025', description: 'Spécialisation en méthodes agiles et mise en œuvre du framework Scrum.' },
+        33: { date: '2025', description: 'Méthodes pour définir et lancer efficacement un MVP.' },
+        34: { date: '2025', description: 'Concepts avancés pour lancer et faire grandir un projet entrepreneurial.' },
+        35: { date: '2025', description: 'Approche structurée de l’innovation et de la résolution des contradictions techniques.' }
       }
     },
     contact: {
@@ -501,9 +530,10 @@ export const i18n = {
       cardGithub: 'GitHub',
       cardDiscord: 'Discord',
       discordTag: 'Pseudo',
+      discordCopied: 'Copié !',
       openTitle: 'Disponible pour collaborer',
       openText:
-        'Je me concentre aujourd’hui sur des projets ambitieux, utiles et bien exécutés. Je reste disponible pour des missions freelance, des collaborations techniques et des échanges stratégiques via Axiane Agency.',
+        'Je me concentre aujourd’hui sur des projets ambitieux, utiles et bien exécutés. Je reste ouvert aux stages, aux collaborations techniques et aux échanges autour de l’IA, de la data et du logiciel.',
       formName: 'Votre nom',
       formEmail: 'Votre email',
       formMessage: 'Votre message',
@@ -514,7 +544,7 @@ export const i18n = {
       emailMessageLabel: 'Message'
     },
     footer: {
-      baseline: 'Code avec React & Tailwind.'
+      baseline: 'Conçu avec React & Tailwind.'
     }
   }
 };

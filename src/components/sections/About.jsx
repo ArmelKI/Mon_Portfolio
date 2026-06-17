@@ -27,9 +27,13 @@ const About = () => {
                         
                         {/* Image */}
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                            <img 
+                            <img
                                 src="/assets/images/profil-armel.jpg"
-                                alt="Armel Stéphane Novak KI" 
+                                alt="Armel Stéphane Novak KI"
+                                width="640"
+                                height="800"
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                             />
                             {/* Overlay (Glow on hover) */}
