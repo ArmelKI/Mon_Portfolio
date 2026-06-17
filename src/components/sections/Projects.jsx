@@ -5,6 +5,14 @@ import { projects } from '../../data/projects';
 import SectionTitle from '../ui/SectionTitle';
 import { useLanguage } from '../../context/LanguageContext';
 
+// Subtle syntax-style coloring for the code preview lines.
+const codeLineClass = (line) => {
+    const trimmed = line.trimStart();
+    if (trimmed.startsWith('$') || trimmed.startsWith('→')) return 'text-emerald-400/70';
+    if (trimmed.startsWith('//') || trimmed.startsWith('#')) return 'text-gray-600 italic';
+    return 'text-gray-400';
+};
+
 const Projects = () => {
     const { t } = useLanguage();
     const [filter, setFilter] = useState('all');
@@ -58,37 +66,51 @@ const Projects = () => {
                                 key={project.id}
                                 className="group bg-card border border-gray-800 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
                             >
-                                {/* Project Image (or icon placeholder when no screenshot) */}
-                                <div className="relative h-48 overflow-hidden">
-                                    {project.image ? (
-                                        <>
-                                            <div className="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors z-10" />
-                                            <img
-                                                src={project.image}
-                                                alt={project.title}
-                                                width="640"
-                                                height="360"
-                                                loading="lazy"
-                                                decoding="async"
-                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                            />
-                                        </>
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/15 via-dark to-accent/15">
-                                            <project.icon size={56} className="text-white/30 group-hover:text-primary/60 transition-colors" />
-                                        </div>
-                                    )}
-                                    {/* Category Badge */}
-                                    <span className="absolute top-4 right-4 z-20 px-3 py-1 bg-black/70 backdrop-blur-md text-xs font-mono text-white rounded-lg border border-white/10 uppercase">
-                                        {categoryBadges[project.category] ?? project.category}
-                                    </span>
-                                    {/* Private Badge */}
-                                    {project.private && (
-                                        <span className="absolute top-4 left-4 z-20 inline-flex items-center gap-1 px-2.5 py-1 bg-black/70 backdrop-blur-md text-xs font-mono text-amber-300 rounded-lg border border-amber-400/30 uppercase">
-                                            <Lock size={11} /> {t.projects.private}
+                                {/* Media: screenshot if available, else a rich "repo" terminal card */}
+                                {project.image ? (
+                                    <div className="relative h-48 overflow-hidden">
+                                        <div className="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors z-10" />
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            width="640"
+                                            height="360"
+                                            loading="lazy"
+                                            decoding="async"
+                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                        <span className="absolute top-4 right-4 z-20 px-3 py-1 bg-black/70 backdrop-blur-md text-xs font-mono text-white rounded-lg border border-white/10 uppercase">
+                                            {categoryBadges[project.category] ?? project.category}
                                         </span>
-                                    )}
-                                </div>
+                                    </div>
+                                ) : (
+                                    <div className="relative h-48 flex flex-col overflow-hidden bg-[#0c0c0e] border-b border-white/5">
+                                        {/* Terminal title bar */}
+                                        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/5 bg-white/[0.02]">
+                                            <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
+                                            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
+                                            <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
+                                            <span className="ml-1 text-[11px] font-mono text-gray-500 truncate">
+                                                ~/{project.repo}
+                                            </span>
+                                            <span className="ml-auto inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-gray-500">
+                                                {project.private
+                                                    ? (<><Lock size={11} className="text-amber-300" /> {t.projects.private}</>)
+                                                    : (categoryBadges[project.category] ?? project.category)}
+                                            </span>
+                                        </div>
+                                        {/* Faint code motif */}
+                                        <div className="relative flex-1 px-4 py-3 font-mono text-[11px] leading-5 overflow-hidden">
+                                            {(project.snippet ?? []).map((line, i) => (
+                                                <div key={i} className={codeLineClass(line)}>{line}</div>
+                                            ))}
+                                            <project.icon
+                                                size={52}
+                                                className="absolute bottom-2 right-3 text-white/[0.06] group-hover:text-primary/20 transition-colors"
+                                            />
+                                        </div>
+                                    </div>
+                                )}
 
                                 {/* Content */}
                                 <div className="p-6 flex flex-col flex-grow">

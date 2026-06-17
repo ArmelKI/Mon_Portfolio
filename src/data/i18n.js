@@ -119,10 +119,6 @@ export const i18n = {
         8: {
           description:
             'Command-line utility in Python to batch-compress and optimize files efficiently.'
-        },
-        9: {
-          description:
-            'Python automation bot that schedules and publishes content across social platforms.'
         }
       }
     },
@@ -384,10 +380,6 @@ export const i18n = {
         8: {
           description:
             'Utilitaire Python en ligne de commande pour compresser et optimiser des fichiers par lots, efficacement.'
-        },
-        9: {
-          description:
-            'Bot d’automatisation Python qui programme et publie du contenu sur les réseaux sociaux.'
         }
       }
     },
