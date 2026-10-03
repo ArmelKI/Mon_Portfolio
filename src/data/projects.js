@@ -11,7 +11,8 @@ export const projects = [
     result: l('Un MVP avancé qui démontre la chaîne recherche → réservation → billet → évaluation.', 'An advanced MVP demonstrating the search → booking → ticket → review flow.'),
     limitations: l('Projet personnel. Paiement et certains flux d’intégration simulés ; backend public indisponible lors de l’audit.', 'Personal project. Payment and some integration flows are simulated; the public backend was unavailable during the audit.'),
     stack: ['Flutter', 'Dart', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Riverpod', 'GitHub Actions'], architecture: ['Flutter / Riverpod', 'REST API / Express', 'PostgreSQL', 'PDF + QR / CI'],
-    privateDemo: true, media: null,
+    privateDemo: true,
+    media: { src: '/assets/images/projects/ankata-logo.webp', width: 1100, height: 1100, alt: l('Logo Ankata versionné dans le projet mobile privé.', 'Ankata logo versioned in the private mobile project.'), caption: l('Logo réel du projet ; une démonstration du flux mobile est disponible sur demande.', 'Real project logo; a demonstration of the mobile flow is available on request.') },
   },
   {
     slug: 'axinafa-ai', order: 2, tier: 'primary', status: l('Prototype de concours fonctionnel', 'Functional competition prototype'), category: 'AI/Data Product',
