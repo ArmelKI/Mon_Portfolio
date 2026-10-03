@@ -1,109 +1,35 @@
-import React, { useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Download, ChevronDown, ArrowRight } from 'lucide-react';
+import { ArrowDownRight, Github, Linkedin } from 'lucide-react';
+import { profile } from '../../data/profile';
 import { useLanguage } from '../../context/LanguageContext';
 
-const Hero = () => {
+export default function Hero() {
   const { t } = useLanguage();
-  const spotlightRef = useRef(null);
-
-  // Update the spotlight via a direct DOM style write on mouse move,
-  // so the cursor never triggers a React re-render of the whole section.
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const node = spotlightRef.current;
-      if (!node) return;
-      node.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(59,130,246,0.15), transparent 40%)`;
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
+  const proofTargets = ['#ankata', '#ankata', '#axinafa-ai', '#covid-pipeline'];
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-dark">
-
-        {/* Background Grid & Spotlight */}
-        <div ref={spotlightRef} className="absolute inset-0 pointer-events-none" />
-        <div className="absolute inset-0 z-0 opacity-[0.15]"
-            style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-        />
-
-        <div className="z-10 text-center px-4 max-w-5xl">
-
-            {/* Badge */}
-            <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-mono mb-8"
-            >
-            <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            {t.hero.badge}
-            </motion.div>
-
-            {/* Title */}
-            <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6"
-            >
-            {t.hero.titleLead} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">
-                {t.hero.titleHighlight}
-            </span>
-            </motion.h1>
-
-            {/* Bio */}
-            <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
-            >
-            {t.hero.bioLine1}<strong className="text-white">Telecom Nancy</strong>{t.hero.bioLine2}
-            <br />{t.hero.bioLine3}
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
-            >
-            <a
-                href="#projects"
-                className="group relative px-8 py-4 bg-white text-black rounded-full font-bold transition-transform hover:scale-105 flex items-center gap-2"
-            >
-                {t.hero.ctaWork}
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <a
-                href="/assets/documents/KI_Armel_Stephane_Novak.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="px-8 py-4 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-full font-medium transition-colors flex items-center gap-2 backdrop-blur-sm"
-            >
-                <Download size={18} /> {t.hero.ctaCv}
-            </a>
-            </motion.div>
+    <section id="top" className="hero" aria-labelledby="hero-title">
+      <div className="hero-copy intro-reveal">
+        <p className="eyebrow">{t.hero.eyebrow}</p>
+        <h1 id="hero-title">{t.hero.titleLead}<br /><span>{t.hero.titleAccent}</span></h1>
+        <p className="hero-lead">{t.hero.lead}</p>
+        <p className="hero-support">{t.hero.support}</p>
+        <div className="hero-actions">
+          <a className="button button--primary" href="#projets">{t.hero.projectsCta}<ArrowDownRight /></a>
+          <a className="button button--ghost" href="#contact">{t.hero.contactCta}</a>
         </div>
-
-        {/* Scroll Down */}
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-600"
-        >
-            <ChevronDown size={24} />
-        </motion.div>
+        <div className="hero-socials">
+          <a href={profile.socials.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
+          <a href={profile.socials.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
+        </div>
+      </div>
+      <div className="hero-system intro-reveal" style={{ animationDelay: '120ms' }} aria-label={t.hero.proofLabel}>
+        <figure className="hero-portrait">
+          <img src="/assets/images/armel-portrait.webp" alt="Armel Stéphane Novak KI" width="1200" height="1200" fetchPriority="high" />
+          <figcaption>Armel KI <span>Software &amp; AI Engineer</span></figcaption>
+        </figure>
+        <div className="system-label">{t.hero.proofLabel}<span aria-hidden="true">↓</span></div>
+        <ol>{t.hero.proof.map((item, index) => <li key={item} className={`play-tile play-tile--${index + 1}`}><a href={proofTargets[index]}><i aria-hidden="true" /><strong>{item}</strong><span aria-hidden="true">→</span></a></li>)}</ol>
+        <p className="system-note">{t.hero.stats.join(' · ')}</p>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}

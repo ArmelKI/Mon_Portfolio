@@ -1,43 +1,29 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { i18n } from '../data/i18n';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { siteCopy } from '../data/profile';
 
 const LanguageContext = createContext(null);
 
 const getInitialLanguage = () => {
-  const stored = localStorage.getItem('portfolio_lang');
-  if (stored === 'fr' || stored === 'en') {
-    return stored;
-  }
-
-  const browserLang = navigator.language?.toLowerCase() || '';
-  return browserLang.startsWith('fr') ? 'fr' : 'en';
+  const stored = window.localStorage.getItem('portfolio_lang');
+  if (stored === 'fr' || stored === 'en') return stored;
+  return window.navigator.language?.toLowerCase().startsWith('fr') ? 'fr' : 'en';
 };
 
-export const LanguageProvider = ({ children }) => {
+export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(getInitialLanguage);
 
   useEffect(() => {
-    localStorage.setItem('portfolio_lang', language);
+    window.localStorage.setItem('portfolio_lang', language);
     document.documentElement.lang = language;
   }, [language]);
 
-  const value = useMemo(
-    () => ({
-      language,
-      setLanguage,
-      t: i18n[language]
-    }),
-    [language]
-  );
-
+  const value = useMemo(() => ({ language, setLanguage, t: siteCopy[language] }), [language]);
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
-};
+}
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useLanguage = () => {
+export function useLanguage() {
   const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
+  if (!context) throw new Error('useLanguage must be used inside LanguageProvider.');
   return context;
-};
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Armel KI — Software & AI Engineer",
+  "short_name": "Armel KI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ff",
+  "theme_color": "#46178f",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

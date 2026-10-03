@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f5ff"/>
+  <rect x="38" y="38" width="1124" height="554" rx="38" fill="#fff" stroke="#241438" stroke-width="5"/>
+  <rect x="50" y="50" width="1124" height="554" rx="38" fill="none" stroke="#241438" stroke-width="5"/>
+  <rect x="78" y="76" width="84" height="84" rx="22" fill="#46178f"/><text x="120" y="131" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="900" fill="white">AK</text>
+  <circle cx="170" cy="82" r="16" fill="#ffca28" stroke="#241438" stroke-width="4"/>
+  <text x="78" y="222" font-family="Arial,sans-serif" font-size="27" font-weight="800" letter-spacing="2" fill="#46178f">SOFTWARE &amp; AI ENGINEER</text>
+  <text x="78" y="327" font-family="Arial,sans-serif" font-size="76" font-weight="900" fill="#241438">Je construis le</text>
+  <text x="78" y="416" font-family="Arial,sans-serif" font-size="82" font-weight="900" fill="#1368ce">produit complet.</text>
+  <text x="78" y="500" font-family="Arial,sans-serif" font-size="24" font-weight="600" fill="#594b69">Web · Mobile · APIs · Automatisation · Data/IA</text>
+  <g transform="translate(850 110)" stroke="#241438" stroke-width="5">
+    <rect width="118" height="118" rx="24" fill="#e21b3c"/><path d="M59 27 91 88H27Z" fill="#fff" stroke="none"/>
+    <rect x="142" width="118" height="118" rx="24" fill="#1368ce"/><path d="M201 25 235 59 201 93 167 59Z" fill="#fff" stroke="none"/>
+    <rect y="142" width="118" height="118" rx="24" fill="#26890c"/><circle cx="59" cy="201" r="34" fill="#fff" stroke="none"/>
+    <rect x="142" y="142" width="118" height="118" rx="24" fill="#ffca28"/><rect x="171" y="171" width="60" height="60" rx="8" fill="#fff" stroke="none"/>
+  </g>
+  <text x="850" y="424" font-family="Arial,sans-serif" font-size="23" font-weight="900" fill="#241438">16 RÉALISATIONS</text>
+  <text x="850" y="462" font-family="Arial,sans-serif" font-size="23" font-weight="900" fill="#241438">35 CERTIFICATIONS</text>
+  <text x="850" y="500" font-family="Arial,sans-serif" font-size="23" font-weight="900" fill="#46178f">1 PROFIL COMPLET</text>
+</svg>
