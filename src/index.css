@@ -708,3 +708,17 @@ button { color: inherit; }
   .journey-secondary { padding: 1rem; border-radius: 18px; }
   .journey-secondary h3 { font-size: 1.35rem; }
 }
+
+.journey-detail > p:has(+ .journey-detail-lines) { margin-bottom: 1rem; }
+.journey-detail-lines, .journey-secondary-lines { margin: 0; padding: 0; list-style: none; }
+.journey-detail-lines { display: grid; gap: .55rem; margin-bottom: 2rem; }
+.journey-detail-lines li { position: relative; padding-left: 1.05rem; font-size: .92rem; line-height: 1.4; }
+.journey-detail-lines li::before { content: ""; position: absolute; left: 0; top: .45rem; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.journey-secondary-lines { display: grid; gap: .3rem; margin-top: .75rem; }
+.journey-secondary-lines li { position: relative; padding-left: .85rem; color: var(--muted); font-size: .78rem; line-height: 1.35; }
+.journey-secondary-lines li::before { content: "→"; position: absolute; left: 0; color: var(--purple); font-weight: 900; }
+
+@media (max-width: 760px) {
+  .journey-detail-lines { margin-bottom: 1.35rem; }
+  .journey-detail-lines li { font-size: .85rem; }
+}

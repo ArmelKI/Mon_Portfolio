@@ -30,6 +30,7 @@ export default function ExperienceEducation() {
           <h3>{getText(active.title, language)}</h3>
           <h4>{getText(active.place, language)}</h4>
           <p>{getText(active.description, language)}</p>
+          {active.details && <ul className="journey-detail-lines">{getText(active.details, language).map((item) => <li key={item}>{item}</li>)}</ul>}
           <div className="journey-controls">
             <button type="button" onClick={() => selectRelative(-1)} aria-label={language === 'fr' ? 'Étape précédente' : 'Previous milestone'}><ArrowLeft /></button>
             <div aria-hidden="true">{steps.map((_, index) => <i key={index} className={index === activeIndex ? 'is-active' : ''} />)}</div>
@@ -48,6 +49,7 @@ export default function ExperienceEducation() {
                   <h3>{getText(item.title, language)}</h3>
                   <strong>{getText(item.place, language)}</strong>
                   <p>{getText(item.description, language)}</p>
+                  {item.details && <ul className="journey-secondary-lines">{getText(item.details, language).map((detail) => <li key={detail}>{detail}</li>)}</ul>}
                 </article>
               ))}
             </div>
