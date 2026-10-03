@@ -35,7 +35,7 @@ export const projects = [
     result: l('Un prototype complet en surface pour tester le parcours et préparer une API réelle.', 'A broad prototype for testing the journey and preparing a real API.'),
     limitations: l('Aucun backend ; authentification de démonstration et données mockées/locales.', 'No backend; demo authentication and mocked/local data.'),
     stack: ['React', 'TypeScript', 'Vite', 'React Query', 'React Router', 'Tailwind', 'Recharts', 'QR Code'], architecture: ['Menu public', 'POS & commandes', 'Couche API typée', 'État local'],
-    repoUrl: 'https://github.com/ArmelKI/quick-menu-africa', media: { src: '/assets/images/projects/quick-menu-home.webp', width: 1440, height: 1000, alt: l('Accueil de MaquiSaaS, application exécutée depuis le dépôt public.', 'MaquiSaaS home screen, application run from the public repository.') },
+    repoUrl: 'https://github.com/ArmelKI/quick-menu-africa', media: { src: '/assets/images/projects/quick-menu-dashboard.webp', width: 1440, height: 900, alt: l('Tableau de bord MaquiSaaS exécuté depuis le dépôt public, avec commandes, caisse et modules de gestion.', 'MaquiSaaS dashboard run from the public repository, with orders, POS and management modules.'), caption: l('Capture réelle en mode démonstration — données fictives.', 'Real capture in demonstration mode — fictional data.') },
   },
   {
     slug: 'sweet-site-studio', order: 4, tier: 'secondary', status: l('Prototype interactif', 'Interactive prototype'), category: 'Commerce UX',

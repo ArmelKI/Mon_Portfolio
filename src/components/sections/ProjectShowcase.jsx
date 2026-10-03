@@ -13,7 +13,8 @@ function ProjectMedia({ project, language, demoLabel }) {
     return (
       <figure className="project-media">
         <img src={project.media.src} alt={getText(project.media.alt, language)} width={project.media.width} height={project.media.height} loading={project.order === 2 ? 'eager' : 'lazy'} decoding="async" />
-        {project.slug === 'axinafa-ai' && <figcaption>{demoLabel}</figcaption>}
+        {project.media.caption && <figcaption>{getText(project.media.caption, language)}</figcaption>}
+        {project.slug === 'axinafa-ai' && !project.media.caption && <figcaption>{demoLabel}</figcaption>}
       </figure>
     );
   }
