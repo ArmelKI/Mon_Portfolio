@@ -1,102 +1,42 @@
-# ⚡ Armel KI — AI & Data Portfolio
+# Armel KI — Software & AI Engineer
 
-![Portfolio Preview](public/assets/images/Site.png)
+Portfolio personnel d’Armel KI, construit comme un dossier de preuves vivant : produits web et mobile, backend/API, automatisation, data et IA utile.
 
-Modern, dark-themed portfolio for an **AI & Data Engineering student**.
-Designed to showcase Data Science projects, certifications, and academic milestones with a clean, high-performance UI.
+Le site présente six études de cas principales, six réalisations publiques complémentaires, quatre projets privés documentés, un parcours interactif et une bibliothèque consultable de 35 certifications. Les statuts et limites sont affichés explicitement afin de distinguer MVP, prototypes, analyses reproductibles et travaux dont le code n'est pas public.
 
-🔗 **Live Demo:** [armel-ki-portfolio.vercel.app](https://armel-ki-portfolio.vercel.app)
+L’identité visuelle adopte un langage de « product playground » : couleurs franches, formes simples, hiérarchie typographique très marquée et interactions courtes. Cette énergie visuelle sert la lecture des preuves sans transformer le portfolio en site d’agence ni en template gaming.
 
----
+## Stack
 
-## 🚀 Features
+- React 19 + Vite 7
+- Tailwind CSS 3 et CSS éditorial sur mesure
+- Lucide React
+- Données bilingues FR/EN
+- Pré-rendu statique du contenu critique après build
+- Tests Node sur le modèle de contenu et contrôle des liens locaux
 
-- **🌍 Bilingual (FR / EN):** Full i18n with language detection and persistence.
-- **🎨 Modern UI/UX:** Dark aesthetic with glassmorphism and an interactive spotlight background.
-- **🍱 Bento Grid:** Asymmetric grid to showcase technical skills.
-- **🗺️ Interactive Timeline:** Visual journey through education, experience, and awards.
-- **📂 Project Filtering:** Filter projects by category (Data & AI, Web, Tools).
-- **📜 Certification Hub:** Browse credentials, highlight featured ones, and download PDF certificates.
-- **📱 Fully Responsive:** Optimized for mobile, tablet, and desktop.
-
----
-
-## 🛠️ Tech Stack
-
-- **Core:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Styling:** [Tailwind CSS v3](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Deployment:** [Vercel](https://vercel.com/)
-
----
-
-## 📂 Project Structure
-
-The project follows a **data-driven** architecture: content is separated from logic.
+## Commandes
 
 ```bash
-Mon_Portfolio/
-├── public/
-│   └── assets/             # Static files (images, PDFs)
-│       ├── documents/      # Certificates & CV
-│       └── images/         # Project screenshots & profile pic
-├── src/
-│   ├── components/
-│   │   ├── layout/         # Navbar, Footer
-│   │   ├── sections/       # Hero, About, Skills, Projects, etc.
-│   │   └── ui/             # Reusable UI (SectionTitle, etc.)
-│   ├── context/            # LanguageContext (i18n provider)
-│   ├── data/               # Structured content (projects, experiences, certifications)
-│   └── App.jsx
-└── tailwind.config.js
-```
-
----
-
-## 🏁 Getting Started
-
-```bash
-git clone https://github.com/ArmelKI/Mon_Portfolio.git
-cd Mon_Portfolio
 npm install
 npm run dev
+npm run lint
+npm test
+npm run check:links
+npm run build
+npm run preview
 ```
 
-Open `http://localhost:5173` in your browser.
+Le build de production injecte un instantané sémantique dans le HTML initial pour exposer le H1, le positionnement et les projets avant l’exécution de React.
 
----
+## Contenu et stratégie
 
-## 📝 Customization
+- `PORTFOLIO_MASTER_BRIEF.md` : source de vérité stratégique et factuelle.
+- `MOTION_BRIEF.md` : brief de vidéo courte.
+- `src/data/projects.js` : projets principaux et réalisations complémentaires.
+- `src/data/certifications.js` : bibliothèque complète des certifications.
+- `src/data/profile.js` et `src/data/portfolio.js` : identité, textes bilingues, capacités et parcours.
 
-Most content lives in `src/data/` and `src/data/i18n.js` (translatable strings):
+## Déploiement
 
-- **Projects:** add an entry to `src/data/projects.js` (and its FR/EN copy in `i18n.js`).
-- **Experience / timeline:** `src/data/experiences.js` + `i18n.js`.
-- **Certifications:** `src/data/certifications.js` (set `featured: true` to highlight one).
-- **Personal info & socials:** `src/data/profile.js`.
-
-### Adding images or PDFs
-
-1. Place the file in `public/assets/...`
-2. Reference it in your data files as a path string: `"/assets/images/my-file.png"`
-
----
-
-## 🚢 Deployment
-
-Optimized for **Vercel**: push to GitHub, import the repo, and deploy.
-
----
-
-## 👤 Author
-
-**Armel Stéphane Novak KI** — Engineering Student @ Télécom Nancy
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/armel-stephane-novak-ki)
-- 🐙 [GitHub](https://github.com/ArmelKI)
-- 📧 [Email](mailto:kiarmelstephanenovak@gmail.com)
-
----
-
-*Made in Nancy, France.*
+Le site est conçu pour un déploiement statique sur Vercel. Aucune publication ni fusion sur la branche principale n’est automatisée par ce dépôt.

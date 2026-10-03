@@ -1,32 +1,37 @@
-import React from 'react';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
+import { useEffect } from 'react';
+import Seo from './components/Seo';
+import SiteHeader from './components/layout/SiteHeader';
+import SiteFooter from './components/layout/SiteFooter';
 import Hero from './components/sections/Hero';
+import ProjectShowcase from './components/sections/ProjectShowcase';
+import Capabilities from './components/sections/Capabilities';
+import ExperienceEducation from './components/sections/ExperienceEducation';
+import SelectedCredentials from './components/sections/SelectedCredentials';
 import About from './components/sections/About';
-import Timeline from './components/sections/Timeline';
-import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
-import Certifications from './components/sections/Certifications';
 import Contact from './components/sections/Contact';
+import { useLanguage } from './context/LanguageContext';
 
-const App = () => {
+export default function App() {
+  const { t } = useLanguage();
+  useEffect(() => {
+    if (!window.location.hash) return;
+    window.requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView());
+  }, []);
   return (
-    <div className="bg-dark min-h-screen text-white font-sans selection:bg-primary selection:text-white">
-      <Navbar />
-      
-      <main>
-        <div id="hero"><Hero /></div>
-        <div id="about" className="scroll-mt-20"><About /></div>
-        <div id="timeline" className="scroll-mt-20"><Timeline /></div>
-        <div id="skills" className="scroll-mt-20"><Skills /></div>
-        <div id="projects" className="scroll-mt-20"><Projects /></div>
-        <div id="certifications" className="scroll-mt-20"><Certifications /></div>
-        <div id="contact" className="scroll-mt-20"><Contact /></div>
+    <>
+      <Seo />
+      <a className="skip-link" href="#main-content">{t.skip}</a>
+      <SiteHeader />
+      <main id="main-content">
+        <Hero />
+        <ProjectShowcase />
+        <Capabilities />
+        <ExperienceEducation />
+        <SelectedCredentials />
+        <About />
+        <Contact />
       </main>
-
-      <Footer />
-    </div>
+      <SiteFooter />
+    </>
   );
-};
-
-export default App;
+}
