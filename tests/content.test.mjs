@@ -6,19 +6,18 @@ import { selectedCredentialIds } from '../src/data/portfolio.js';
 
 test('featured project selection stays factual and ordered', () => {
   assert.deepEqual(validateProjects(), []);
-  assert.equal(projects[0].slug, 'ankata');
-  assert.equal(projects[1].slug, 'axinafa-ai');
-  assert.equal(projects.filter((item) => item.tier === 'selected').length, 2);
+  assert.deepEqual(projects.map((item) => item.slug), ['fasopport', 'ankata', 'imex-horizon', 'axiane-cabinets', 'axiane-academy', 'axinafa-ai']);
+  assert.equal(projects.filter((item) => item.privateDemo).length, 5);
 });
 
 test('notable work remains visually secondary', () => {
-  assert.equal(notableProjects.length, 8);
+  assert.equal(notableProjects.length, 4);
   assert.ok(notableProjects.every((item) => item.privateDemo || item.url.startsWith('https://github.com/ArmelKI/')));
   assert.ok(notableProjects.filter((item) => item.privateDemo).every((item) => !item.url));
 });
 
 test('private work never exposes a fake repository link', () => {
-  assert.equal(privateProjects.length, 4);
+  assert.equal(privateProjects.length, 0);
   assert.ok(privateProjects.every((item) => !('url' in item) && !('repoUrl' in item)));
 });
 

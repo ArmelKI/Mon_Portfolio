@@ -652,6 +652,7 @@ button { color: inherit; }
 .public-work-link { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; margin-top: 1.2rem; padding: .65rem .85rem; color: white; border: 2px solid var(--ink); border-radius: 10px; background: var(--work-accent); box-shadow: 0 3px 0 var(--ink); text-decoration: none; font-size: .74rem; font-weight: 850; text-transform: uppercase; }
 .public-work-card:nth-child(2) .public-work-link, .public-work-card:nth-child(6) .public-work-link { color: var(--ink); }
 .public-work-link svg { width: 16px; }
+.public-work-link--archive { margin-top: 1.75rem; background: var(--ink); }
 
 @media (max-width: 760px) {
   .hero-system li { min-height: 0; }

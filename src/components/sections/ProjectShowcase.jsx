@@ -1,5 +1,5 @@
 import { ArrowUpRight, Github, Mail, MonitorPlay } from 'lucide-react';
-import { getText, notableProjects, privateProjects, projects } from '../../data/projects';
+import { getText, notableProjects, projects } from '../../data/projects';
 import { profile } from '../../data/profile';
 import { useLanguage } from '../../context/LanguageContext';
 import SectionHeading from '../ui/SectionHeading';
@@ -12,7 +12,7 @@ function ProjectMedia({ project, language, demoLabel }) {
   if (project.media) {
     return (
       <figure className="project-media">
-        <img src={project.media.src} alt={getText(project.media.alt, language)} width={project.media.width} height={project.media.height} loading={project.order === 2 ? 'eager' : 'lazy'} decoding="async" />
+        <img src={project.media.src} alt={getText(project.media.alt, language)} width={project.media.width} height={project.media.height} loading={project.order === 1 ? 'eager' : 'lazy'} decoding="async" />
         {project.media.caption && <figcaption>{getText(project.media.caption, language)}</figcaption>}
         {project.slug === 'axinafa-ai' && !project.media.caption && <figcaption>{demoLabel}</figcaption>}
       </figure>
@@ -59,7 +59,7 @@ function NotableVisual({ project, language }) {
   }
   return (
     <div className="public-work-evidence" aria-label={getText(project.title, language)}>
-      <span>PY</span><strong>PyCompressor</strong>
+      <span>{getText(project.title, language).split(/\s+/).map((word) => word[0]).join('').slice(0, 2).toUpperCase()}</span><strong>{getText(project.title, language)}</strong>
       <ul>{getText(project.visual, language).map((item) => <li key={item}>{item}</li>)}</ul>
     </div>
   );
@@ -87,48 +87,24 @@ function PublicProjectCard({ project, index, language, codeLabel, requestLabel }
 
 export default function ProjectShowcase() {
   const { language, t } = useLanguage();
-  const featured = projects.filter((project) => project.tier !== 'selected');
-  const selected = projects.filter((project) => project.tier === 'selected');
-  const archiveTitle = language === 'fr' ? 'Des produits à explorer, pas des miniatures.' : 'Products to explore, not thumbnails.';
-  const archiveIntro = language === 'fr' ? 'Plateforme d’apprentissage, commerce, outil desktop, prospection et jeu : chaque produit a son propre terrain, ses contraintes et une preuve réelle à explorer.' : 'Learning platform, commerce, desktop tooling, prospecting and a game: each product has its own ground, constraints and real evidence to explore.';
-  const privateTitle = language === 'fr' ? 'Des projets privés, visibles autrement.' : 'Private projects, shown differently.';
-  const privateIntro = language === 'fr' ? 'Le code n’est pas public, mais le travail existe. Je présente ici uniquement les éléments documentés dans mon CV ; une démonstration ou un échange permet d’aller plus loin.' : 'The code is not public, but the work exists. I only present details documented in my résumé; a demo or conversation can provide the rest.';
+  const archiveTitle = language === 'fr' ? 'Quatre projets pour élargir la preuve.' : 'Four projects that broaden the evidence.';
+  const archiveIntro = language === 'fr' ? 'Travail d’équipe, algorithmique, commerce visuel et SaaS métier : des réalisations complémentaires, chacune présentée à son niveau réel de maturité.' : 'Teamwork, algorithms, visual commerce and business SaaS: complementary work, each presented at its actual level of maturity.';
   const codeLabel = language === 'fr' ? 'Voir le code' : 'View code';
   const requestLabel = language === 'fr' ? 'Demander une démo' : 'Request a demo';
+  const githubLabel = language === 'fr' ? 'Explorer tous mes dépôts GitHub' : 'Explore all my GitHub repositories';
 
   return (
     <>
       <section id="projets" className="section-shell projects-section">
         <SectionHeading eyebrow={t.projects.eyebrow} title={t.projects.title} intro={t.projects.intro} />
-        <div className="project-stack">{featured.map((project) => <ProjectCase key={project.slug} project={project} language={language} copy={t.projects} />)}</div>
-      </section>
-      <section className="section-shell data-section" aria-labelledby="data-title">
-        <SectionHeading eyebrow={t.dataWork.eyebrow} title={<span id="data-title">{t.dataWork.title}</span>} intro={t.dataWork.intro} />
-        <div className="data-grid">{selected.map((project) => <ProjectCase key={project.slug} project={project} language={language} copy={t.projects} />)}</div>
+        <div className="project-stack">{projects.map((project) => <ProjectCase key={project.slug} project={project} language={language} copy={t.projects} />)}</div>
       </section>
       <section className="section-shell public-work-section" aria-labelledby="archive-title">
-        <SectionHeading eyebrow={language === 'fr' ? '03 · Élargir' : '03 · Expand'} title={<span id="archive-title">{archiveTitle}</span>} intro={archiveIntro} />
+        <SectionHeading eyebrow={language === 'fr' ? '02 · Compléter' : '02 · Complete'} title={<span id="archive-title">{archiveTitle}</span>} intro={archiveIntro} />
         <div className="public-work-grid">
           {notableProjects.map((project, index) => <PublicProjectCard key={project.slug} project={project} index={index} language={language} codeLabel={codeLabel} requestLabel={requestLabel} />)}
         </div>
-      </section>
-      <section className="section-shell private-work-section" aria-labelledby="private-work-title">
-        <SectionHeading eyebrow={language === 'fr' ? '04 · En coulisses' : '04 · Behind the scenes'} title={<span id="private-work-title">{privateTitle}</span>} intro={privateIntro} />
-        <div className="private-work-grid">
-          {privateProjects.map((project, index) => {
-            const title = getText(project.title, language);
-            const subject = language === 'fr' ? `Demande de démonstration — ${title}` : `Demo request — ${title}`;
-            return (
-              <article key={title} className="private-work-card">
-                <div className="private-work-top"><span>{String(index + 1).padStart(2, '0')}</span><strong>{getText(project.status, language)}</strong></div>
-                <h3>{title}</h3>
-                <p>{getText(project.description, language)}</p>
-                <ul className="tech-list">{project.stack.map((tech) => <li key={getText(tech, language)}>{getText(tech, language)}</li>)}</ul>
-                <a className="private-demo-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(subject)}`}><Mail />{requestLabel}<ArrowUpRight /></a>
-              </article>
-            );
-          })}
-        </div>
+        <a className="public-work-link public-work-link--archive" href={profile.socials.github} target="_blank" rel="noreferrer"><Github />{githubLabel}<ArrowUpRight /></a>
       </section>
     </>
   );
