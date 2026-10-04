@@ -65,7 +65,9 @@ function NotableVisual({ project, language }) {
   );
 }
 
-function PublicProjectCard({ project, index, language, codeLabel }) {
+function PublicProjectCard({ project, index, language, codeLabel, requestLabel }) {
+  const title = getText(project.title, language);
+  const subject = language === 'fr' ? `Demande de démonstration — ${title}` : `Demo request — ${title}`;
   return (
     <article id={project.slug} className="public-work-card">
       <NotableVisual project={project} language={language} />
@@ -75,7 +77,9 @@ function PublicProjectCard({ project, index, language, codeLabel }) {
         <p>{getText(project.description, language)}</p>
         <ul className="public-work-highlights">{getText(project.highlights, language).map((item) => <li key={item}>{item}</li>)}</ul>
         <ul className="tech-list">{project.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul>
-        <a className="public-work-link" href={project.url} target="_blank" rel="noreferrer"><Github />{codeLabel}<ArrowUpRight /></a>
+        {project.privateDemo
+          ? <a className="public-work-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(subject)}`}><Mail />{requestLabel}<ArrowUpRight /></a>
+          : <a className="public-work-link" href={project.url} target="_blank" rel="noreferrer"><Github />{codeLabel}<ArrowUpRight /></a>}
       </div>
     </article>
   );
@@ -86,7 +90,7 @@ export default function ProjectShowcase() {
   const featured = projects.filter((project) => project.tier !== 'selected');
   const selected = projects.filter((project) => project.tier === 'selected');
   const archiveTitle = language === 'fr' ? 'Des produits à explorer, pas des miniatures.' : 'Products to explore, not thumbnails.';
-  const archiveIntro = language === 'fr' ? 'Interfaces métier, commerce, outil desktop, prospection et jeu : chaque projet public a son propre terrain, ses contraintes et son code.' : 'Business interfaces, commerce, desktop tooling, prospecting and a game: each public project has its own ground, constraints and code.';
+  const archiveIntro = language === 'fr' ? 'Plateforme d’apprentissage, commerce, outil desktop, prospection et jeu : chaque produit a son propre terrain, ses contraintes et une preuve réelle à explorer.' : 'Learning platform, commerce, desktop tooling, prospecting and a game: each product has its own ground, constraints and real evidence to explore.';
   const privateTitle = language === 'fr' ? 'Des projets privés, visibles autrement.' : 'Private projects, shown differently.';
   const privateIntro = language === 'fr' ? 'Le code n’est pas public, mais le travail existe. Je présente ici uniquement les éléments documentés dans mon CV ; une démonstration ou un échange permet d’aller plus loin.' : 'The code is not public, but the work exists. I only present details documented in my résumé; a demo or conversation can provide the rest.';
   const codeLabel = language === 'fr' ? 'Voir le code' : 'View code';
@@ -105,7 +109,7 @@ export default function ProjectShowcase() {
       <section className="section-shell public-work-section" aria-labelledby="archive-title">
         <SectionHeading eyebrow={language === 'fr' ? '03 · Élargir' : '03 · Expand'} title={<span id="archive-title">{archiveTitle}</span>} intro={archiveIntro} />
         <div className="public-work-grid">
-          {notableProjects.map((project, index) => <PublicProjectCard key={project.slug} project={project} index={index} language={language} codeLabel={codeLabel} />)}
+          {notableProjects.map((project, index) => <PublicProjectCard key={project.slug} project={project} index={index} language={language} codeLabel={codeLabel} requestLabel={requestLabel} />)}
         </div>
       </section>
       <section className="section-shell private-work-section" aria-labelledby="private-work-title">

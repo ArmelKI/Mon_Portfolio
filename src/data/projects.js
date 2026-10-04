@@ -27,7 +27,31 @@ export const projects = [
     repoUrl: 'https://github.com/ArmelKI/AxiNafa-AI', demoUrl: 'https://axinafa-ai.vercel.app', media: { src: '/assets/images/axinafa-app.png', width: 1440, height: 1000, alt: l('Dashboard AxiNafa avec données de démonstration, indicateurs et synthèse explicable.', 'AxiNafa dashboard with fictional demo data, indicators and an explainable summary.') },
   },
   {
-    slug: 'quick-menu-africa', order: 3, tier: 'secondary', status: l('Prototype frontend', 'Frontend prototype'), category: 'SaaS UI',
+    slug: 'axiane-cabinets', order: 3, tier: 'primary', privateDemo: true, status: l('Prototype avancé — validation pilote à mener', 'Advanced prototype — pilot validation pending'), category: 'Logiciel métier',
+    title: l('AXIANE Cabinets — piloter un cabinet, du rendez-vous au tableau de bord', 'AXIANE Cabinets — running a practice from booking to dashboard'),
+    summary: l('Une plateforme multi-cabinets qui relie site public, réservation, file d’attente, équipe, sécurité et pilotage opérationnel.', 'A multi-practice platform connecting public websites, booking, queues, teams, security and operational management.'),
+    problem: l('Les rendez-vous, la file d’attente, les informations publiques et le suivi d’activité sont souvent dispersés entre plusieurs outils.', 'Appointments, queues, public information and activity tracking are often scattered across several tools.'),
+    built: l('Sites publics configurables, réservation, ticket et file d’attente, gestion multi-sites et multi-rôles, tableau de bord, double authentification et assistant administratif borné.', 'Configurable public websites, booking, ticketing and queues, multi-site and role management, dashboard, two-factor authentication and a constrained administrative assistant.'),
+    challenge: l('Isoler les données de chaque cabinet tout en gardant des parcours publics simples, des droits fins et un socle testable.', 'Isolating each practice’s data while keeping public journeys simple, permissions granular and the platform testable.'),
+    result: l('Un produit full-stack navigable, documenté et couvert par des parcours desktop et mobile réels.', 'A navigable, documented full-stack product with real desktop and mobile journeys.'),
+    limitations: l('Prototype avancé avec données de démonstration ; hébergement, flux réels et validation juridique restent à mener avant un pilote.', 'Advanced prototype with demonstration data; hosting, real workflows and legal validation remain before a pilot.'),
+    stack: ['Next.js', 'TypeScript', 'Django REST', 'PostgreSQL', 'TOTP'], architecture: ['Next.js multi-tenant', 'API Django REST', 'PostgreSQL', 'RBAC & TOTP'],
+    media: { src: '/assets/images/projects/axiane-cabinets-dashboard.webp', width: 1440, height: 1000, alt: l('Tableau de bord réel d’AXIANE Cabinets avec données fictives de démonstration.', 'Real AXIANE Cabinets dashboard with fictional demonstration data.'), caption: l('Capture réelle du prototype — cabinet et données fictifs.', 'Real prototype capture — fictional practice and data.') },
+  },
+  {
+    slug: 'fasopport', order: 4, tier: 'primary', privateDemo: true, status: l('Produit full-stack en développement avancé', 'Advanced full-stack product in development'), category: 'Software & IA',
+    title: l('Fas’Opport — structurer les opportunités et faciliter la décision', 'Fas’Opport — structuring opportunities to support decisions'),
+    summary: l('Une plateforme de veille qui collecte plusieurs sources, structure les documents avec l’IA et rapproche entreprises, opportunités et candidats.', 'A monitoring platform that collects multiple sources, structures documents with AI and connects companies, opportunities and candidates.'),
+    problem: l('Marchés publics, appels à candidatures et recrutements sont publiés dans des formats dispersés, difficiles à surveiller et à qualifier.', 'Public tenders, calls for applications and recruitment opportunities are published in scattered formats that are difficult to monitor and qualify.'),
+    built: l('Espaces entreprise, candidat et administration, ingestion multi-source, extraction structurée assistée par IA, matching explicable, alertes et supervision des traitements.', 'Company, candidate and administration spaces, multi-source ingestion, AI-assisted structured extraction, explainable matching, alerts and processing supervision.'),
+    challenge: l('Orchestrer collecte, files de traitement, parsing IA et règles métier sans masquer les raisons d’une correspondance.', 'Orchestrating collection, processing queues, AI parsing and business rules without hiding why a match was produced.'),
+    result: l('Un socle full-stack où l’IA intervient dans une chaîne opérationnelle observable plutôt que comme simple fonctionnalité décorative.', 'A full-stack foundation where AI participates in an observable operational workflow rather than acting as a decorative feature.'),
+    limitations: l('Produit en développement avancé ; aucune adoption, mise en production ou performance commerciale n’est revendiquée.', 'Product in advanced development; no adoption, production use or commercial performance is claimed.'),
+    stack: ['Laravel', 'Vue 3', 'TypeScript', 'PostgreSQL', 'Docker', 'LLM'], architecture: ['API Laravel', 'Workers spécialisés', 'PostgreSQL', 'Frontend Vue 3'],
+    media: { src: '/assets/images/projects/fasopport-home.webp', width: 1440, height: 1000, alt: l('Accueil réel de Fas’Opport présentant les parcours entreprise et candidat.', 'Real Fas’Opport home page showing company and candidate journeys.'), caption: l('Capture réelle du produit en développement.', 'Real capture of the product in development.') },
+  },
+  {
+    slug: 'quick-menu-africa', order: 5, tier: 'secondary', status: l('Prototype frontend', 'Frontend prototype'), category: 'SaaS UI',
     title: l('Quick Menu Africa — une interface métier pour restaurateurs', 'Quick Menu Africa — a business interface for restaurants'),
     summary: l('Une suite frontend couvrant menu QR, commandes, caisse, stock, clients, promotions et analytics.', 'A frontend suite covering QR menus, orders, POS, inventory, customers, promotions and analytics.'),
     problem: l('Coordonner menu public, prise de commande et suivi opérationnel depuis plusieurs vues.', 'Coordinating the public menu, order taking and operations across several views.'),
@@ -39,7 +63,7 @@ export const projects = [
     repoUrl: 'https://github.com/ArmelKI/quick-menu-africa', media: { src: '/assets/images/projects/quick-menu-dashboard.webp', width: 1440, height: 900, alt: l('Tableau de bord MaquiSaaS exécuté depuis le dépôt public, avec commandes, caisse et modules de gestion.', 'MaquiSaaS dashboard run from the public repository, with orders, POS and management modules.'), caption: l('Capture réelle en mode démonstration — données fictives.', 'Real capture in demonstration mode — fictional data.') },
   },
   {
-    slug: 'sweet-site-studio', order: 4, tier: 'secondary', status: l('Prototype interactif', 'Interactive prototype'), category: 'Commerce UX',
+    slug: 'sweet-site-studio', order: 6, tier: 'secondary', status: l('Prototype interactif', 'Interactive prototype'), category: 'Commerce UX',
     title: l('Sweet Site Studio — du catalogue au back-office', 'Sweet Site Studio — from catalog to back office'),
     summary: l('Une expérience de commande pour pâtisserie, du produit au checkout, avec back-office local.', 'A bakery ordering experience from product to checkout, with a local back office.'),
     problem: l('Présenter un catalogue, accepter des demandes personnalisées et gérer contenu et commandes dans une expérience cohérente.', 'Presenting a catalog, accepting custom requests and managing content and orders coherently.'),
@@ -51,7 +75,7 @@ export const projects = [
     repoUrl: 'https://github.com/ArmelKI/sweet-site-studio', media: { src: '/assets/images/projects/sweet-site-hero.jpg', width: 1920, height: 1080, alt: l('Visuel de pâtisserie versionné dans le dépôt public Sweet Site Studio.', 'Bakery visual versioned in the public Sweet Site Studio repository.') },
   },
   {
-    slug: 'covid-pipeline', order: 5, tier: 'selected', status: l('Notebook reproductible', 'Reproducible notebook'), category: 'Data Automation',
+    slug: 'covid-pipeline', order: 7, tier: 'selected', status: l('Notebook reproductible', 'Reproducible notebook'), category: 'Data Automation',
     title: l('COVID-19 — automatiser une comparaison temporelle', 'COVID-19 — automating a time-series comparison'),
     summary: l('Pipeline Python : données OWID, quatre pays, moyenne mobile sur sept jours et export du graphique.', 'Python pipeline: OWID data, four countries, seven-day rolling average and chart export.'),
     challenge: l('Fiabiliser dates, tri des séries et lissage avant comparaison.', 'Making dates, ordering and smoothing reliable before comparison.'),
@@ -61,7 +85,7 @@ export const projects = [
     media: { src: '/assets/images/covid_trends.png', width: 1000, height: 500, alt: l('Courbes de moyenne mobile sur sept jours pour quatre pays.', 'Seven-day rolling-average curves for four countries.') },
   },
   {
-    slug: 'netflix-analysis', order: 6, tier: 'selected', status: l('Analyse exploratoire', 'Exploratory analysis'), category: 'Data Analysis',
+    slug: 'netflix-analysis', order: 8, tier: 'selected', status: l('Analyse exploratoire', 'Exploratory analysis'), category: 'Data Analysis',
     title: l('Netflix — fiabiliser l’analyse d’un catalogue', 'Netflix — making catalog analysis more reliable'),
     summary: l('Nettoyage, traitement des coproductions et visualisation de l’évolution, l’origine et la durée des contenus.', 'Cleaning, co-production handling and visualization of content evolution, origin and duration.'),
     challenge: l('Gérer dates, valeurs manquantes et pays multiples sans fausser les agrégations.', 'Handling dates, missing values and multiple countries without distorting aggregations.'),
@@ -73,6 +97,12 @@ export const projects = [
 ];
 
 export const notableProjects = [
+  {
+    slug: 'axiane-academy', title: 'AXIANE Academy', privateDemo: true, status: l('Plateforme e-learning fonctionnelle — démo privée', 'Functional e-learning platform — private demo'),
+    description: l('Une plateforme e-learning full-stack réunissant catalogue, apprentissage, formateurs, entreprises, administration et assistance pédagogique par IA.', 'A full-stack e-learning platform bringing together a catalog, learning, trainers, companies, administration and AI-assisted learning.'),
+    highlights: l(['Parcours multi-rôles', 'Cours, quiz, devoirs & attestations', 'Tuteur et correction IA encadrés'], ['Multi-role journeys', 'Courses, quizzes, assignments & certificates', 'Constrained AI tutor and grading']), stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Auth.js', 'Mistral'],
+    media: { src: '/assets/images/projects/axiane-academy-catalog.webp', width: 1440, height: 1000, alt: l('Catalogue réel d’AXIANE Academy avec filtres et parcours de formation.', 'Real AXIANE Academy catalog with filters and learning paths.'), caption: l('Capture réelle de la plateforme — démonstration privée sur demande.', 'Real platform capture — private demonstration on request.') },
+  },
   {
     slug: 'salon-shine', title: 'Salon Shine', status: l('Prototype interactif', 'Interactive prototype'),
     description: l('Une expérience de salon qui relie présentation des services, galerie, avant/après, prise de rendez-vous et administration.', 'A salon experience connecting service discovery, a gallery, before/after views, booking and administration.'),
@@ -150,7 +180,7 @@ export const getText = (value, language) => typeof value === 'string' ? value : 
 
 export const validateProjects = (items = projects) => {
   const errors = [];
-  if (items.length !== 6) errors.push('Exactly six featured projects are required.');
+  if (items.length !== 8) errors.push('Exactly eight detailed projects are required.');
   items.forEach((project, index) => {
     if (project.order !== index + 1) errors.push(`Invalid order for ${project.slug}.`);
     if (!project.privateDemo && !project.repoUrl?.startsWith('https://')) errors.push(`Invalid repository URL for ${project.slug}.`);

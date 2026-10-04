@@ -12,8 +12,9 @@ test('featured project selection stays factual and ordered', () => {
 });
 
 test('notable work remains visually secondary', () => {
-  assert.equal(notableProjects.length, 7);
-  assert.ok(notableProjects.every((item) => item.url.startsWith('https://github.com/ArmelKI/')));
+  assert.equal(notableProjects.length, 8);
+  assert.ok(notableProjects.every((item) => item.privateDemo || item.url.startsWith('https://github.com/ArmelKI/')));
+  assert.ok(notableProjects.filter((item) => item.privateDemo).every((item) => !item.url));
 });
 
 test('private work never exposes a fake repository link', () => {
