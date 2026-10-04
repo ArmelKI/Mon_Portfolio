@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Seo from './components/Seo';
 import SiteHeader from './components/layout/SiteHeader';
 import SiteFooter from './components/layout/SiteFooter';
@@ -13,6 +13,7 @@ import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
   const { t } = useLanguage();
+  const cursorRef = useRef(null);
   useEffect(() => {
     if (!window.location.hash) return;
     window.requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView());
@@ -42,10 +43,28 @@ export default function App() {
       window.removeEventListener('resize', updateProgress);
     };
   }, []);
+  useEffect(() => {
+    if (window.matchMedia('(hover: none), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return undefined;
+    const cursor = cursorRef.current;
+    const onMove = (event) => {
+      cursor?.style.setProperty('--cursor-x', `${event.clientX}px`);
+      cursor?.style.setProperty('--cursor-y', `${event.clientY}px`);
+      const interactive = event.target.closest('a, button, .project-case, .public-work-card, .capability-row');
+      cursor?.toggleAttribute('data-active', Boolean(interactive));
+    };
+    const onLeave = () => cursor?.removeAttribute('data-active');
+    window.addEventListener('pointermove', onMove, { passive: true });
+    document.documentElement.addEventListener('mouseleave', onLeave);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      document.documentElement.removeEventListener('mouseleave', onLeave);
+    };
+  }, []);
   return (
     <>
       <Seo />
       <div className="scroll-progress" aria-hidden="true" />
+      <div ref={cursorRef} className="cursor-orb" aria-hidden="true">GO</div>
       <a className="skip-link" href="#main-content">{t.skip}</a>
       <SiteHeader />
       <main id="main-content">
