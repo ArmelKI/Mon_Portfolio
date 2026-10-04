@@ -12,7 +12,7 @@ test('featured project selection stays factual and ordered', () => {
 });
 
 test('notable work remains visually secondary', () => {
-  assert.equal(notableProjects.length, 6);
+  assert.equal(notableProjects.length, 7);
   assert.ok(notableProjects.every((item) => item.url.startsWith('https://github.com/ArmelKI/')));
 });
 

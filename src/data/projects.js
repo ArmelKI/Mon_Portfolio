@@ -92,6 +92,12 @@ export const notableProjects = [
     media: { src: '/assets/images/projects/vetements-bf-home.webp', width: 1440, height: 1000, alt: l('Accueil de Vêtements BF, application exécutée depuis le dépôt public.', 'Vêtements BF home screen, application run from the public repository.'), caption: l('Capture réelle du dépôt public exécuté localement.', 'Real capture of the public repository run locally.') },
   },
   {
+    slug: 'delices-de-mira', title: 'Les Délices de Mira', status: l('Application e-commerce avec administration', 'E-commerce application with administration'),
+    description: l('Une expérience de pâtisserie qui relie catalogue filtrable, panier, commande WhatsApp et espace d’administration.', 'A bakery experience connecting a filterable catalog, cart, WhatsApp ordering and an administration space.'),
+    highlights: l(['Catalogue & filtres', 'Panier & commande WhatsApp', 'Administration & export CSV'], ['Catalog & filters', 'Cart & WhatsApp ordering', 'Administration & CSV export']), stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Supabase'], url: 'https://github.com/ArmelKI/les-Delices-de-Mira',
+    media: { src: '/assets/images/projects/delices-mira-home.webp', width: 1440, height: 900, alt: l('Accueil des Délices de Mira exécuté depuis le dépôt public.', 'Les Délices de Mira home screen run from the public repository.'), caption: l('Capture réelle du dépôt public exécuté localement.', 'Real capture of the public repository run locally.') },
+  },
+  {
     slug: 'pycompressor', title: 'PyCompressor', status: l('Outil desktop fonctionnel', 'Functional desktop tool'),
     description: l('Un utilitaire desktop pour compresser des images et PDF sans bloquer l’interface pendant le traitement.', 'A desktop utility that compresses images and PDFs without blocking the interface while processing.'),
     highlights: l(['Fichiers multiples', 'Qualité réglable', 'Progression asynchrone'], ['Multiple files', 'Adjustable quality', 'Async progress']), stack: ['Python', 'CustomTkinter', 'Pillow', 'pypdf'], url: 'https://github.com/ArmelKI/PyCompressor',

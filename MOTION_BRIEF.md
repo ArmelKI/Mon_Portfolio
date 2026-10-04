@@ -295,6 +295,7 @@ La phrase « j'ai structuré » évite d'affirmer un travail exclusivement solo.
 - Sweet Site Studio : https://github.com/ArmelKI/sweet-site-studio
 - COVID-19 Data Pipeline : https://github.com/ArmelKI/covid19-data-analysis
 - Netflix Data Analysis V2 : https://github.com/ArmelKI/Netflix_data_Analysis_V2
+- Les Délices de Mira : https://github.com/ArmelKI/les-Delices-de-Mira
 - Prospection TNS : https://github.com/ArmelKI/PPII-TNS-Prospector
 - Les Incivilisés : https://github.com/ArmelKI/PPII-Civilisation
 
@@ -314,6 +315,7 @@ La phrase « j'ai structuré » évite d'affirmer un travail exclusivement solo.
 - Vêtements BF : `public/assets/images/projects/vetements-bf-home.webp` — capture réelle locale du dépôt public.
 - Prospection TNS : `public/assets/images/projects/tns-prospector-kanban.webp` — guide utilisateur, données de démonstration.
 - Les Incivilisés : `public/assets/images/projects/civilisation-assets.webp` — planche d'assets versionnée ; projet d'équipe.
+- Les Délices de Mira : `public/assets/images/projects/delices-mira-home.webp` — capture réelle locale du dépôt public.
 
 ### Assets secondaires, uniquement si le montage en a besoin
 

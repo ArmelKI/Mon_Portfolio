@@ -21,7 +21,7 @@ export const siteCopy = {
       support: 'Du premier parcours utilisateur à la logique métier, puis aux données qui l’enrichissent.',
       projectsCta: 'Voir mes réalisations', contactCta: 'Me contacter', proofLabel: 'Explorer par capacité',
       proof: ['Web & mobile', 'Backends & APIs', 'Data & IA utile', 'Automatisation'],
-      stats: ['16 réalisations', '35 certifications', '1 profil complet'],
+      stats: ['17 réalisations', '35 certifications', '1 profil complet'],
       availability: 'Apprenti ingénieur IA', availabilityDate: 'Sopra Steria Next · AI4B · jusqu’en août 2028', availabilityCta: 'Voir le parcours',
     },
     projects: {
@@ -49,7 +49,7 @@ export const siteCopy = {
       support: 'From the first user journey to business logic, then the data that makes it richer.',
       projectsCta: 'Explore my work', contactCta: 'Contact me', proofLabel: 'Explore by capability',
       proof: ['Web & mobile', 'Backends & APIs', 'Data & useful AI', 'Automation'],
-      stats: ['16 projects', '35 credentials', '1 complete profile'],
+      stats: ['17 projects', '35 credentials', '1 complete profile'],
       availability: 'AI engineering apprentice', availabilityDate: 'Sopra Steria Next · AI4B · through August 2028', availabilityCta: 'View journey',
     },
     projects: {

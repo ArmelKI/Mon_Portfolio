@@ -2,7 +2,7 @@
 
 Portfolio personnel d’Armel KI, construit comme un dossier de preuves vivant : produits web et mobile, backend/API, automatisation, data et IA utile.
 
-Le site présente six études de cas principales, six réalisations publiques complémentaires, quatre projets privés documentés, un parcours interactif et une bibliothèque consultable de 35 certifications. Les statuts et limites sont affichés explicitement afin de distinguer MVP, prototypes, analyses reproductibles et travaux dont le code n'est pas public.
+Le site présente six études de cas principales, sept réalisations publiques complémentaires, quatre projets privés documentés, un parcours interactif et une bibliothèque consultable de 35 certifications. Les statuts et limites sont affichés explicitement afin de distinguer MVP, prototypes, analyses reproductibles et travaux dont le code n'est pas public.
 
 L’identité visuelle adopte un langage de « product playground » : couleurs franches, formes simples, hiérarchie typographique très marquée et interactions courtes. Cette énergie visuelle sert la lecture des preuves sans transformer le portfolio en site d’agence ni en template gaming.
 

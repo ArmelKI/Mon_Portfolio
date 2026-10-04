@@ -7,7 +7,7 @@
 Cet amendement explicite la densité attendue et prévaut sur les passages plus restrictifs ci-dessous :
 
 - Les six projets sélectionnés restent la narration principale, dans le même ordre, mais ne constituent pas tout le portfolio.
-- Ajouter après eux une section clairement secondaire **Autres réalisations notables** : Salon Shine, Grill Go, Vêtements BF, PyCompressor, Prospection TNS et Les Incivilisés, avec leurs statuts et limites vérifiés. Cette section ne doit pas remettre les projets faibles ou les forks au même niveau que les études de cas.
+- Ajouter après eux une section clairement secondaire **Autres réalisations notables** : Salon Shine, Grill Go, Vêtements BF, Les Délices de Mira, PyCompressor, Prospection TNS et Les Incivilisés, avec leurs statuts et limites vérifiés. Cette section ne doit pas remettre les projets faibles ou les forks au même niveau que les études de cas.
 - Conserver cinq certifications éditorialisées sur la home, puis rendre accessible une **bibliothèque complète des certifications** avec recherche/filtres et liens de vérification/PDF. Le but est de montrer l'étendue réelle sans placer un mur de badges avant les réalisations.
 - La page doit être substantielle : projets, autres réalisations, compétences, parcours, distinctions, formation et certifications doivent tous être faciles à explorer.
 - Abandonner l'idée d'un portfolio uniformément sombre. Direction finale : un **product playground** personnel, lumineux et très structuré — violet identitaire, rouge, bleu, jaune et vert, formes géométriques simples, typographie massive, cartes arrondies et ombres franches. L'inspiration Kahoot porte sur l'énergie, la lisibilité et le système de couleurs, jamais sur une copie d'interface. Le résultat doit rester crédible pour un recruteur technique, lisible sur mobile et distinct d'un template tech sombre générique.
@@ -244,6 +244,7 @@ Ajouter une courte note personnelle uniquement après validation : Rubik's Cube,
 - Salon Shine : bon UX/motion, mais redondant et auth locale non sécurisée.
 - Grill Go : intégration WhatsApp compréhensible, mais back-office/KPI statiques.
 - Vêtements BF : redondant avec Sweet Site.
+- Les Délices de Mira : expérience e-commerce distincte avec catalogue, panier, commande WhatsApp et administration ; capture locale réelle disponible. Ne pas inventer de client, de volume de commandes ou de déploiement.
 - PyCompressor : outil desktop fonctionnel ; expliciter les fonctions prouvées par le code sans inventer de métrique et préférer une capture réelle si elle devient disponible.
 - Prospection TNS : projet académique terminé, désormais public ; mettre en avant la gestion des prospects, le Kanban, la cartographie, l'export et la suppression complète, avec la capture du guide utilisateur explicitement étiquetée comme données de démonstration.
 - Les Incivilisés : jeu académique en équipe terminé ; préciser le périmètre d'Armel (IA, barbares, Makefile et extensions), sans s'attribuer seul l'intégralité du jeu.
@@ -648,12 +649,13 @@ Omettre le fait ; ne pas afficher `à confirmer` sur le site public. Les marqueu
 |---|---|---|---|---|
 | Ankata | https://github.com/ArmelKI/Ankata | Aucune démo fiable ; `https://ankata.onrender.com/health` ne répondait pas durant l'audit | `mobile/assets/logos/ankata_logo.jpeg`, logos compagnies à valider | Capturer accueil, recherche, résultats, réservation, billet/QR, profil depuis l'app réelle. |
 | AxiNafa AI | https://github.com/ArmelKI/AxiNafa-AI | https://axinafa-ai.vercel.app | `public/assets/images/axinafa-dashboard.png`, `public/assets/images/axinafa-app.png` capturés depuis la démo publique ; données fictives | Compléter si possible par saisie, score/radar et aperçu PDF depuis la démo. |
-| Quick Menu Africa | https://github.com/ArmelKI/quick-menu-africa | Aucune démo vérifiée | Aucun média produit versionné | Lancer localement ; capturer landing, menu QR, dashboard, POS, stock, analytics ; vérifier auth démo. |
+| Quick Menu Africa | https://github.com/ArmelKI/quick-menu-africa | Aucune démo vérifiée | `public/assets/images/projects/quick-menu-dashboard.webp`, capture locale du dashboard en mode démonstration | Conserver la légende indiquant que les données sont fictives. |
 | Sweet Site Studio | https://github.com/ArmelKI/sweet-site-studio | Aucune démo vérifiée | `src/assets/hero-cake.jpg`, logo et six images de galerie | Lancer localement ; capturer catalogue, produit, checkout et admin ; valider droits des photos. |
 | COVID-19 Data Pipeline | https://github.com/ArmelKI/covid19-data-analysis | Notebook seulement | https://raw.githubusercontent.com/ArmelKI/covid19-data-analysis/main/images/covid_trends.png ; copie locale `public/assets/images/covid_trends.png` | Conserver le graphe entier, ajouter résumé textuel accessible. |
 | Netflix Data Analysis V2 | https://github.com/ArmelKI/Netflix_data_Analysis_V2 | Notebook seulement | `public/assets/images/netflix-analysis.png` à valider | Exporter si possible les graphes sans chrome VS Code ; sinon recadrer proprement sans altérer les données. |
 | Prospection TNS | https://github.com/ArmelKI/PPII-TNS-Prospector | Dépôt public ; pas de démo déployée vérifiée | `public/assets/images/projects/tns-prospector-kanban.webp`, issu du guide utilisateur avec données de démonstration | Montrer le Kanban avec cette légende ; ne pas exposer de données réelles. |
 | Les Incivilisés | https://github.com/ArmelKI/PPII-Civilisation | Dépôt public ; pas de démo déployée vérifiée | `public/assets/images/projects/civilisation-assets.webp`, planche d'assets versionnée | Montrer le visuel comme asset du jeu ; préciser qu'il s'agit d'un projet d'équipe et le périmètre d'Armel. |
+| Les Délices de Mira | https://github.com/ArmelKI/les-Delices-de-Mira | Dépôt public ; pas de démo déployée vérifiée | `public/assets/images/projects/delices-mira-home.webp`, capture locale du site exécuté depuis le dépôt | Conserver le statut d’application e-commerce avec administration ; ne pas le présenter comme une réalisation client ou un service en production. |
 
 ### Autres liens identitaires
 
