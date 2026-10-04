@@ -654,6 +654,22 @@ button { color: inherit; }
 .public-work-link svg { width: 16px; }
 .public-work-link--archive { margin-top: 1.75rem; background: var(--ink); }
 
+.exploration-section { padding-top: 3.5rem; }
+.exploration-tabs { display: flex; gap: .65rem; margin-bottom: 1.35rem; overflow-x: auto; padding: .2rem .1rem .7rem; scrollbar-width: thin; }
+.exploration-tabs button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: .65rem .85rem; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; background: white; box-shadow: 0 3px 0 var(--ink); font: inherit; font-size: .78rem; font-weight: 850; cursor: pointer; transition: transform 160ms ease, background 160ms ease, color 160ms ease; }
+.exploration-tabs button:hover { transform: translateY(-2px); }
+.exploration-tabs button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ink); }
+.exploration-tabs button.is-active { color: white; background: var(--purple); }
+.exploration-tabs button span { display: grid; place-items: center; width: 22px; height: 22px; color: var(--ink); border-radius: 50%; background: var(--yellow); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .61rem; }
+.exploration-detail { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); overflow: hidden; border: 2px solid var(--ink); border-radius: 26px; background: white; box-shadow: 0 7px 0 var(--blue); animation: journey-card-in 260ms cubic-bezier(.2,.8,.2,1) both; }
+.exploration-visual { min-height: 365px; background: #e9e4f4; }
+.exploration-visual .public-work-media, .exploration-visual .public-work-evidence { height: 100%; min-height: 365px; }
+.exploration-copy { display: flex; flex-direction: column; padding: clamp(1.25rem, 3vw, 2rem); }
+.exploration-status { margin: 0; color: var(--purple); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .69rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+.exploration-copy h3 { margin: .7rem 0 .55rem; font-size: clamp(2rem, 4vw, 3.5rem); line-height: .95; letter-spacing: -.06em; }
+.exploration-copy > p:not(.exploration-status) { margin: 0; color: var(--muted); line-height: 1.55; }
+.exploration-copy .public-work-link { align-self: flex-start; margin-top: auto; }
+
 @media (max-width: 760px) {
   .hero-system li { min-height: 0; }
   .hero-system li > a { min-height: 96px; padding: .7rem; }
@@ -668,6 +684,13 @@ button { color: inherit; }
   .public-work-link { width: 100%; margin-top: 1rem; }
   .public-work-evidence > strong { font-size: 2.55rem; }
   .public-work-evidence ul { grid-template-columns: 1fr 1fr; }
+  .exploration-section { padding-top: 2.5rem; }
+  .exploration-tabs { margin-right: -1rem; }
+  .exploration-detail { grid-template-columns: 1fr; border-radius: 19px; }
+  .exploration-visual, .exploration-visual .public-work-media, .exploration-visual .public-work-evidence { min-height: 230px; }
+  .exploration-copy { padding: 1rem; }
+  .exploration-copy h3 { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .exploration-copy .public-work-link { align-self: stretch; }
 }
 
 /* Portrait-led hero and deliberate motion. */

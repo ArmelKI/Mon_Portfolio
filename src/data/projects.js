@@ -102,6 +102,51 @@ export const notableProjects = [
   },
 ];
 
+export const explorations = [
+  {
+    slug: 'quick-menu-africa', title: 'Quick Menu Africa', status: l('Prototype frontend', 'Frontend prototype'),
+    description: l('Une suite d’interface pour restaurateurs : menu QR, commandes, caisse, stock, clients, promotions et analytics.', 'An interface suite for restaurant owners: QR menu, orders, POS, inventory, customers, promotions and analytics.'),
+    highlights: l(['Menu QR & commande', 'Caisse & stock', 'Couche API typée'], ['QR menu & ordering', 'POS & inventory', 'Typed API layer']), stack: ['React', 'TypeScript', 'Vite', 'React Query', 'Recharts'], url: 'https://github.com/ArmelKI/quick-menu-africa',
+    media: { src: '/assets/images/projects/quick-menu-dashboard.webp', width: 1440, height: 900, alt: l('Tableau de bord Quick Menu Africa avec données de démonstration.', 'Quick Menu Africa dashboard with demonstration data.') },
+  },
+  {
+    slug: 'sweet-site-studio', title: 'Sweet Site Studio', status: l('Prototype interactif', 'Interactive prototype'),
+    description: l('Une expérience de commande pour pâtisserie, du catalogue au checkout, avec un back-office local.', 'A bakery ordering experience from catalog to checkout, with a local back office.'),
+    highlights: l(['Catalogue & panier', 'Gâteaux sur mesure', 'Back-office local'], ['Catalog & cart', 'Custom cakes', 'Local back office']), stack: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'], url: 'https://github.com/ArmelKI/sweet-site-studio',
+    media: { src: '/assets/images/projects/sweet-site-home.webp', width: 1440, height: 1000, alt: l('Accueil de Sweet Site Studio exécuté depuis le dépôt public.', 'Sweet Site Studio home screen run from the public repository.') },
+  },
+  {
+    slug: 'salon-shine', title: 'Salon Shine', status: l('Prototype interactif', 'Interactive prototype'),
+    description: l('Une expérience de salon qui relie services, galerie, avant/après, prise de rendez-vous et administration.', 'A salon experience connecting services, gallery, before/after, booking and administration.'),
+    highlights: l(['Services & galerie', 'Rendez-vous', 'Espace administration'], ['Services & gallery', 'Booking', 'Admin area']), stack: ['React', 'TypeScript', 'Tailwind', 'Motion'], url: 'https://github.com/ArmelKI/salon-shine',
+    media: { src: '/assets/images/projects/salon-shine-home.webp', width: 1440, height: 1000, alt: l('Accueil de Salon Shine exécuté depuis le dépôt public.', 'Salon Shine home screen run from the public repository.') },
+  },
+  {
+    slug: 'grill-go', title: 'Grill Go', status: l('Prototype interactif', 'Interactive prototype'),
+    description: l('Un parcours de commande restauration avec menu, panier, livraison, QR menu, WhatsApp et espace d’administration.', 'A restaurant ordering flow with menu, cart, delivery, QR menu, WhatsApp and an administration area.'),
+    highlights: l(['Menu & commande', 'Livraison', 'QR menu & WhatsApp'], ['Menu & ordering', 'Delivery', 'QR menu & WhatsApp']), stack: ['React', 'TypeScript', 'Tailwind', 'WhatsApp'], url: 'https://github.com/ArmelKI/grill-go',
+    media: { src: '/assets/images/projects/grill-go-home.webp', width: 1440, height: 1000, alt: l('Accueil de Grill Go exécuté depuis le dépôt public.', 'Grill Go home screen run from the public repository.') },
+  },
+  {
+    slug: 'vetements-bf', title: 'Vêtements BF', status: l('Prototype interactif', 'Interactive prototype'),
+    description: l('Une boutique éditoriale avec collections, fiches produit, panier, favoris, lookbook et administration locale.', 'An editorial storefront with collections, product pages, cart, favorites, lookbook and local administration.'),
+    highlights: l(['Collections & lookbook', 'Panier & favoris', 'Espace administration'], ['Collections & lookbook', 'Cart & favorites', 'Admin area']), stack: ['React', 'TypeScript', 'Tailwind', 'Commerce UX'], url: 'https://github.com/ArmelKI/v-tementsbf-boutique',
+    media: { src: '/assets/images/projects/vetements-bf-home.webp', width: 1440, height: 1000, alt: l('Accueil de Vêtements BF exécuté depuis le dépôt public.', 'Vêtements BF home screen run from the public repository.') },
+  },
+  {
+    slug: 'delices-de-mira', title: 'Les Délices de Mira', status: l('Application e-commerce avec administration', 'E-commerce application with administration'),
+    description: l('Une expérience de pâtisserie qui relie catalogue filtrable, panier, commande WhatsApp et espace d’administration.', 'A bakery experience connecting a filterable catalog, cart, WhatsApp ordering and an administration space.'),
+    highlights: l(['Catalogue & filtres', 'Panier & WhatsApp', 'Administration & export CSV'], ['Catalog & filters', 'Cart & WhatsApp', 'Administration & CSV export']), stack: ['React', 'Vite', 'Tailwind CSS', 'Supabase'], url: 'https://github.com/ArmelKI/les-Delices-de-Mira',
+    media: { src: '/assets/images/projects/delices-mira-home.webp', width: 1440, height: 900, alt: l('Accueil des Délices de Mira exécuté depuis le dépôt public.', 'Les Délices de Mira home screen run from the public repository.') },
+  },
+  {
+    slug: 'pycompressor', title: 'PyCompressor', status: l('Outil desktop fonctionnel', 'Functional desktop tool'),
+    description: l('Un utilitaire desktop pour compresser images et PDF sans bloquer l’interface pendant le traitement.', 'A desktop utility that compresses images and PDFs without blocking the interface during processing.'),
+    highlights: l(['Fichiers multiples', 'Qualité réglable', 'Traitement asynchrone'], ['Multiple files', 'Adjustable quality', 'Async processing']), stack: ['Python', 'CustomTkinter', 'Pillow', 'pypdf'], url: 'https://github.com/ArmelKI/PyCompressor',
+    visual: l(['Images & PDF', 'Qualité 10 → 100', 'Redimensionnement', 'Arrière-plan'], ['Images & PDFs', 'Quality 10 → 100', 'Resizing', 'Background work']),
+  },
+];
+
 export const privateProjects = [];
 
 export const getText = (value, language) => typeof value === 'string' ? value : value?.[language] ?? value?.fr ?? '';

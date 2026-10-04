@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { projects, notableProjects, privateProjects, validateProjects } from '../src/data/projects.js';
+import { explorations, projects, notableProjects, privateProjects, validateProjects } from '../src/data/projects.js';
 import { certifications } from '../src/data/certifications.js';
 import { selectedCredentialIds } from '../src/data/portfolio.js';
 
@@ -19,6 +19,11 @@ test('notable work remains visually secondary', () => {
 test('private work never exposes a fake repository link', () => {
   assert.equal(privateProjects.length, 0);
   assert.ok(privateProjects.every((item) => !('url' in item) && !('repoUrl' in item)));
+});
+
+test('explorations stay public and separate from the core selection', () => {
+  assert.equal(explorations.length, 7);
+  assert.ok(explorations.every((item) => item.url.startsWith('https://github.com/ArmelKI/')));
 });
 
 test('five credentials lead to the complete library', () => {

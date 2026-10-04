@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { ArrowUpRight, Github, Mail, MonitorPlay } from 'lucide-react';
-import { getText, notableProjects, projects } from '../../data/projects';
+import { explorations, getText, notableProjects, projects } from '../../data/projects';
 import { profile } from '../../data/profile';
 import { useLanguage } from '../../context/LanguageContext';
 import SectionHeading from '../ui/SectionHeading';
@@ -85,6 +86,39 @@ function PublicProjectCard({ project, index, language, codeLabel, requestLabel }
   );
 }
 
+function ExplorationGallery({ language, codeLabel }) {
+  const [activeSlug, setActiveSlug] = useState(explorations[0].slug);
+  const activeProject = explorations.find((project) => project.slug === activeSlug) ?? explorations[0];
+  const title = language === 'fr' ? 'D’autres produits à faire tourner.' : 'More products to explore.';
+  const intro = language === 'fr'
+    ? 'Ces prototypes ne portent pas seuls le positionnement, mais ils montrent le volume, le soin d’interface et les terrains que j’ai explorés. Choisissez-en un pour voir ce qu’il contient.'
+    : 'These prototypes do not carry the positioning alone, but they show volume, interface craft and the ground I have explored. Pick one to see what it contains.';
+
+  return (
+    <section className="section-shell exploration-section" aria-labelledby="exploration-title">
+      <SectionHeading eyebrow={language === 'fr' ? '03 · Explorer' : '03 · Explore'} title={<span id="exploration-title">{title}</span>} intro={intro} />
+      <div className="exploration-tabs" role="tablist" aria-label={language === 'fr' ? 'Autres réalisations' : 'Other work'}>
+        {explorations.map((project, index) => (
+          <button key={project.slug} type="button" role="tab" aria-selected={project.slug === activeProject.slug} aria-controls="exploration-detail" id={`exploration-tab-${project.slug}`} className={project.slug === activeProject.slug ? 'is-active' : ''} onClick={() => setActiveSlug(project.slug)}>
+            <span>{String(index + 1).padStart(2, '0')}</span>{getText(project.title, language)}
+          </button>
+        ))}
+      </div>
+      <article id="exploration-detail" className="exploration-detail" role="tabpanel" aria-labelledby={`exploration-tab-${activeProject.slug}`}>
+        <div className="exploration-visual"><NotableVisual project={activeProject} language={language} /></div>
+        <div className="exploration-copy">
+          <p className="exploration-status">{getText(activeProject.status, language)}</p>
+          <h3>{getText(activeProject.title, language)}</h3>
+          <p>{getText(activeProject.description, language)}</p>
+          <ul className="public-work-highlights">{getText(activeProject.highlights, language).map((item) => <li key={item}>{item}</li>)}</ul>
+          <ul className="tech-list">{activeProject.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul>
+          <a className="public-work-link" href={activeProject.url} target="_blank" rel="noreferrer"><Github />{codeLabel}<ArrowUpRight /></a>
+        </div>
+      </article>
+    </section>
+  );
+}
+
 export default function ProjectShowcase() {
   const { language, t } = useLanguage();
   const archiveTitle = language === 'fr' ? 'Quatre projets pour élargir la preuve.' : 'Four projects that broaden the evidence.';
@@ -106,6 +140,7 @@ export default function ProjectShowcase() {
         </div>
         <a className="public-work-link public-work-link--archive" href={profile.socials.github} target="_blank" rel="noreferrer"><Github />{githubLabel}<ArrowUpRight /></a>
       </section>
+      <ExplorationGallery language={language} codeLabel={codeLabel} />
     </>
   );
 }
