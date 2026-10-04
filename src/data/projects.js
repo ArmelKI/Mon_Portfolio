@@ -62,7 +62,7 @@ export const projects = [
     media: { src: '/assets/images/projects/axiane-academy-catalog.webp', width: 1440, height: 1000, alt: l('Catalogue réel d’AXIANE Academy avec filtres et parcours de formation.', 'Real AXIANE Academy catalog with filters and learning paths.'), caption: l('Capture réelle de la plateforme — démonstration privée sur demande.', 'Real platform capture — private demonstration on request.') },
   },
   {
-    slug: 'axinafa-ai', order: 6, tier: 'primary', status: l('Prototype de concours fonctionnel', 'Functional competition prototype'), category: 'AI/Data Product',
+    slug: 'axinafa-ai', order: 6, tier: 'primary', status: l('Projet de concours fonctionnel', 'Functional competition project'), category: 'AI/Data Product',
     title: l('AxiNafa AI — rendre une activité financière lisible', 'AxiNafa AI — making financial activity understandable'),
     summary: l('Un carnet financier mobile-first qui transforme des opérations simples en tendances, score explicable et dossier PDF de financement.', 'A mobile-first financial notebook that turns simple transactions into trends, an explainable score and a financing PDF.'),
     problem: l('Un micro-commerçant peut avoir une activité réelle sans historique structuré facile à présenter.', 'A micro-merchant can run a real business without an easy-to-present structured history.'),
@@ -89,13 +89,13 @@ export const notableProjects = [
     media: { src: '/assets/images/projects/civilisation-assets.webp', width: 1136, height: 304, alt: l('Planche d’assets versionnée du jeu Les Incivilisés.', 'Versioned asset sheet from The Uncivilized game.'), caption: l('Assets du jeu versionnés dans le dépôt public.', 'Game assets versioned in the public repository.') },
   },
   {
-    slug: 'glow-soft', title: 'Glow Soft Beauty', privateDemo: true, status: l('Prototype e-commerce avancé — backend métier à brancher', 'Advanced e-commerce prototype — business backend pending'),
+    slug: 'glow-soft', title: 'Glow Soft Beauty', privateDemo: true, status: l('Boutique e-commerce bilingue — démo privée', 'Bilingual e-commerce store — private demo'),
     description: l('Une boutique bilingue avec catalogue, panier, livraison, commande WhatsApp, SEO, accessibilité et espace d’administration protégé.', 'A bilingual storefront with catalog, cart, delivery, WhatsApp ordering, SEO, accessibility and a protected administration space.'),
     highlights: l(['36 pages Next.js', 'Parcours bilingue & accessible', 'Admin sécurisé, données statiques'], ['36 Next.js pages', 'Bilingual & accessible journey', 'Secure admin, static data']), stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'WhatsApp', 'HMAC'],
     media: { src: '/assets/images/projects/glow-soft-home.webp', width: 1440, height: 756, alt: l('Maquette réelle ayant guidé l’interface Glow Soft Beauty.', 'Real mockup that guided the Glow Soft Beauty interface.'), caption: l('Maquette source du projet ; données et coordonnées de démonstration.', 'Project source mockup; demonstration data and contact details.') },
   },
   {
-    slug: 'rentwise-africa', title: 'Rentwise Africa', privateDemo: true, status: l('Prototype frontend de gestion locative — sans backend', 'Property-management frontend prototype — no backend'),
+    slug: 'rentwise-africa', title: 'Rentwise Africa', privateDemo: true, status: l('Interface SaaS de gestion locative — démo locale', 'Property-management SaaS interface — local demo'),
     description: l('Une interface SaaS configurable pour suivre biens, unités, locataires, loyers, contrats, maintenance et rapports.', 'A configurable SaaS interface for tracking properties, units, tenants, rent, contracts, maintenance and reports.'),
     highlights: l(['Dashboard métier', 'Configuration white-label', 'Données locales de démonstration'], ['Business dashboard', 'White-label configuration', 'Local demonstration data']), stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts'],
     visual: l(['Biens & unités', 'Locataires & contrats', 'Loyers & maintenance', 'Rapports & white-label'], ['Properties & units', 'Tenants & contracts', 'Rent & maintenance', 'Reports & white-label']),
@@ -104,31 +104,31 @@ export const notableProjects = [
 
 export const explorations = [
   {
-    slug: 'quick-menu-africa', title: 'Quick Menu Africa', status: l('Prototype frontend', 'Frontend prototype'),
+    slug: 'quick-menu-africa', title: 'Quick Menu Africa', status: l('Interface SaaS pour restaurateurs', 'SaaS interface for restaurant owners'),
     description: l('Une suite d’interface pour restaurateurs : menu QR, commandes, caisse, stock, clients, promotions et analytics.', 'An interface suite for restaurant owners: QR menu, orders, POS, inventory, customers, promotions and analytics.'),
     highlights: l(['Menu QR & commande', 'Caisse & stock', 'Couche API typée'], ['QR menu & ordering', 'POS & inventory', 'Typed API layer']), stack: ['React', 'TypeScript', 'Vite', 'React Query', 'Recharts'], url: 'https://github.com/ArmelKI/quick-menu-africa',
     media: { src: '/assets/images/projects/quick-menu-dashboard.webp', width: 1440, height: 900, alt: l('Tableau de bord Quick Menu Africa avec données de démonstration.', 'Quick Menu Africa dashboard with demonstration data.') },
   },
   {
-    slug: 'sweet-site-studio', title: 'Sweet Site Studio', status: l('Prototype interactif', 'Interactive prototype'),
+    slug: 'sweet-site-studio', title: 'Sweet Site Studio', status: l('Expérience commerce interactive', 'Interactive commerce experience'),
     description: l('Une expérience de commande pour pâtisserie, du catalogue au checkout, avec un back-office local.', 'A bakery ordering experience from catalog to checkout, with a local back office.'),
     highlights: l(['Catalogue & panier', 'Gâteaux sur mesure', 'Back-office local'], ['Catalog & cart', 'Custom cakes', 'Local back office']), stack: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'], url: 'https://github.com/ArmelKI/sweet-site-studio',
     media: { src: '/assets/images/projects/sweet-site-home.webp', width: 1440, height: 1000, alt: l('Accueil de Sweet Site Studio exécuté depuis le dépôt public.', 'Sweet Site Studio home screen run from the public repository.') },
   },
   {
-    slug: 'salon-shine', title: 'Salon Shine', status: l('Prototype interactif', 'Interactive prototype'),
+    slug: 'salon-shine', title: 'Salon Shine', status: l('Application de réservation & gestion', 'Booking & management application'),
     description: l('Une expérience de salon qui relie services, galerie, avant/après, prise de rendez-vous et administration.', 'A salon experience connecting services, gallery, before/after, booking and administration.'),
     highlights: l(['Services & galerie', 'Rendez-vous', 'Espace administration'], ['Services & gallery', 'Booking', 'Admin area']), stack: ['React', 'TypeScript', 'Tailwind', 'Motion'], url: 'https://github.com/ArmelKI/salon-shine',
     media: { src: '/assets/images/projects/salon-shine-home.webp', width: 1440, height: 1000, alt: l('Accueil de Salon Shine exécuté depuis le dépôt public.', 'Salon Shine home screen run from the public repository.') },
   },
   {
-    slug: 'grill-go', title: 'Grill Go', status: l('Prototype interactif', 'Interactive prototype'),
+    slug: 'grill-go', title: 'Grill Go', status: l('Application de commande restauration', 'Restaurant ordering application'),
     description: l('Un parcours de commande restauration avec menu, panier, livraison, QR menu, WhatsApp et espace d’administration.', 'A restaurant ordering flow with menu, cart, delivery, QR menu, WhatsApp and an administration area.'),
     highlights: l(['Menu & commande', 'Livraison', 'QR menu & WhatsApp'], ['Menu & ordering', 'Delivery', 'QR menu & WhatsApp']), stack: ['React', 'TypeScript', 'Tailwind', 'WhatsApp'], url: 'https://github.com/ArmelKI/grill-go',
     media: { src: '/assets/images/projects/grill-go-home.webp', width: 1440, height: 1000, alt: l('Accueil de Grill Go exécuté depuis le dépôt public.', 'Grill Go home screen run from the public repository.') },
   },
   {
-    slug: 'vetements-bf', title: 'Vêtements BF', status: l('Prototype interactif', 'Interactive prototype'),
+    slug: 'vetements-bf', title: 'Vêtements BF', status: l('Boutique éditoriale interactive', 'Interactive editorial storefront'),
     description: l('Une boutique éditoriale avec collections, fiches produit, panier, favoris, lookbook et administration locale.', 'An editorial storefront with collections, product pages, cart, favorites, lookbook and local administration.'),
     highlights: l(['Collections & lookbook', 'Panier & favoris', 'Espace administration'], ['Collections & lookbook', 'Cart & favorites', 'Admin area']), stack: ['React', 'TypeScript', 'Tailwind', 'Commerce UX'], url: 'https://github.com/ArmelKI/v-tementsbf-boutique',
     media: { src: '/assets/images/projects/vetements-bf-home.webp', width: 1440, height: 1000, alt: l('Accueil de Vêtements BF exécuté depuis le dépôt public.', 'Vêtements BF home screen run from the public repository.') },

@@ -64,7 +64,7 @@ export default function App() {
     <>
       <Seo />
       <div className="scroll-progress" aria-hidden="true" />
-      <div ref={cursorRef} className="cursor-orb" aria-hidden="true">GO</div>
+      <div ref={cursorRef} className="cursor-orb" aria-hidden="true" />
       <a className="skip-link" href="#main-content">{t.skip}</a>
       <SiteHeader />
       <main id="main-content">
