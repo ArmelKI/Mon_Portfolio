@@ -9,6 +9,7 @@ const links = [
 export default function SiteHeader() {
   const { language, setLanguage, t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState('#top');
   const closeRef = useRef(null);
   const toggleRef = useRef(null);
 
@@ -36,6 +37,16 @@ export default function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const targets = links.map(([, href]) => document.querySelector(href)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActiveHref(`#${visible.target.id}`);
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: [0.02, .25, .5] });
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
+
   const switcher = (
     <div className="language-switcher" aria-label={language === 'fr' ? 'Langue' : 'Language'}>
       {['fr', 'en'].map((item) => (
@@ -48,7 +59,7 @@ export default function SiteHeader() {
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Armel KI — accueil"><span>AK</span> Armel KI</a>
       <nav className="desktop-nav" aria-label={language === 'fr' ? 'Navigation principale' : 'Main navigation'}>
-        {links.map(([key, href]) => <a key={key} href={href}>{t.nav[key]}</a>)}
+        {links.map(([key, href]) => <a key={key} href={href} aria-current={activeHref === href ? 'page' : undefined}>{t.nav[key]}</a>)}
         {switcher}
       </nav>
       <button ref={toggleRef} className="menu-toggle" type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={language === 'fr' ? 'Ouvrir le menu' : 'Open menu'}><Menu /></button>
@@ -56,7 +67,7 @@ export default function SiteHeader() {
         <div className="mobile-nav-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
           <nav id="mobile-navigation" className="mobile-nav" aria-label={language === 'fr' ? 'Navigation mobile' : 'Mobile navigation'}>
             <button ref={closeRef} className="menu-close" type="button" onClick={() => setOpen(false)} aria-label={language === 'fr' ? 'Fermer le menu' : 'Close menu'}><X /></button>
-            {links.map(([key, href]) => <a key={key} href={href} onClick={() => setOpen(false)}>{t.nav[key]}</a>)}
+            {links.map(([key, href]) => <a key={key} href={href} aria-current={activeHref === href ? 'page' : undefined} onClick={() => setOpen(false)}>{t.nav[key]}</a>)}
             {switcher}
           </nav>
         </div>

@@ -29,7 +29,7 @@ export default function ExperienceEducation() {
       <div className="journey-group-tabs" role="tablist" aria-label={language === 'fr' ? 'Catégories du parcours' : 'Journey categories'}>
         {groups.map(([key, label]) => <button key={key} type="button" role="tab" aria-selected={activeGroup === key} className={activeGroup === key ? 'is-active' : ''} onClick={() => selectGroup(key)}>{label}</button>)}
       </div>
-      <div className="journey-explorer">
+      <div className="journey-explorer" style={{ '--journey-progress': `${steps.length > 1 ? (activeIndex / (steps.length - 1)) * 100 : 0}%` }}>
         <div className="journey-rail" role="tablist" aria-label={language === 'fr' ? `Étapes : ${activeLabel}` : `Milestones: ${activeLabel}`}>
           {steps.map((item, index) => (
             <button key={`${activeGroup}-${getText(item.title, language)}-${index}`} type="button" role="tab" className={index === activeIndex ? 'is-active' : ''} onClick={() => setActiveIndex(index)} aria-selected={index === activeIndex} aria-controls="journey-detail">

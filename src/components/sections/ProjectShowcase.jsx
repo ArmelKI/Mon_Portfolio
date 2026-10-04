@@ -104,7 +104,7 @@ function ExplorationGallery({ language, codeLabel }) {
           </button>
         ))}
       </div>
-      <article id="exploration-detail" className="exploration-detail" role="tabpanel" aria-labelledby={`exploration-tab-${activeProject.slug}`}>
+      <article key={activeProject.slug} id="exploration-detail" className="exploration-detail" role="tabpanel" aria-labelledby={`exploration-tab-${activeProject.slug}`}>
         <div className="exploration-visual"><NotableVisual project={activeProject} language={language} /></div>
         <div className="exploration-copy">
           <p className="exploration-status">{getText(activeProject.status, language)}</p>
