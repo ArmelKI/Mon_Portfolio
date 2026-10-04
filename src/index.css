@@ -697,6 +697,9 @@ button { color: inherit; }
 .exploration-copy h3 { margin: .7rem 0 .55rem; font-size: clamp(2rem, 4vw, 3.5rem); line-height: .95; letter-spacing: -.06em; }
 .exploration-copy > p:not(.exploration-status) { margin: 0; color: var(--muted); line-height: 1.55; }
 .exploration-copy .public-work-link { align-self: flex-start; margin-top: auto; }
+.exploration-project-link { display: inline-flex; align-items: center; gap: .42rem; align-self: flex-start; margin-top: auto; padding: .55rem .1rem; color: var(--ink); text-decoration: none; font-size: .82rem; font-weight: 850; border-bottom: 2px solid var(--ink); transition: color 160ms ease, gap 160ms ease; }
+.exploration-project-link:hover { color: var(--purple); gap: .64rem; }
+.exploration-project-link svg { width: 16px; }
 
 @media (max-width: 760px) {
   .hero-system li { min-height: 0; }
@@ -719,6 +722,7 @@ button { color: inherit; }
   .exploration-copy { padding: 1rem; }
   .exploration-copy h3 { font-size: clamp(2rem, 10vw, 2.8rem); }
   .exploration-copy .public-work-link { align-self: stretch; }
+  .exploration-project-link { align-self: stretch; justify-content: center; margin-top: 1.15rem; }
 }
 
 /* Portrait-led hero and deliberate motion. */

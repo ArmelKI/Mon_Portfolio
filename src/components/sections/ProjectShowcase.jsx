@@ -86,13 +86,14 @@ function PublicProjectCard({ project, index, language, codeLabel, requestLabel }
   );
 }
 
-function ExplorationGallery({ language, codeLabel }) {
+function ExplorationGallery({ language }) {
   const [activeSlug, setActiveSlug] = useState(explorations[0].slug);
   const activeProject = explorations.find((project) => project.slug === activeSlug) ?? explorations[0];
-  const title = language === 'fr' ? 'D’autres produits à faire tourner.' : 'More products to explore.';
+  const title = language === 'fr' ? 'D’autres réalisations, à explorer.' : 'More work, ready to explore.';
   const intro = language === 'fr'
-    ? 'Ces prototypes ne portent pas seuls le positionnement, mais ils montrent le volume, le soin d’interface et les terrains que j’ai explorés. Choisissez-en un pour voir ce qu’il contient.'
-    : 'These prototypes do not carry the positioning alone, but they show volume, interface craft and the ground I have explored. Pick one to see what it contains.';
+    ? 'Commerce, réservation, restauration et outils desktop : ces produits complètent les études de cas et montrent la variété des expériences que je conçois et développe.'
+    : 'Commerce, booking, food service and desktop tools: these products complement the case studies and show the variety of experiences I design and develop.';
+  const projectLinkLabel = language === 'fr' ? 'Voir le projet' : 'View project';
 
   return (
     <section className="section-shell exploration-section" aria-labelledby="exploration-title">
@@ -112,7 +113,7 @@ function ExplorationGallery({ language, codeLabel }) {
           <p>{getText(activeProject.description, language)}</p>
           <ul className="public-work-highlights">{getText(activeProject.highlights, language).map((item) => <li key={item}>{item}</li>)}</ul>
           <ul className="tech-list">{activeProject.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul>
-          <a className="public-work-link" href={activeProject.url} target="_blank" rel="noreferrer"><Github />{codeLabel}<ArrowUpRight /></a>
+          <a className="exploration-project-link" href={activeProject.url} target="_blank" rel="noreferrer" aria-label={`${projectLinkLabel} — ${getText(activeProject.title, language)} (GitHub)`}><Github />{projectLinkLabel}<ArrowUpRight /></a>
         </div>
       </article>
     </section>
@@ -140,7 +141,7 @@ export default function ProjectShowcase() {
         </div>
         <a className="public-work-link public-work-link--archive" href={profile.socials.github} target="_blank" rel="noreferrer"><Github />{githubLabel}<ArrowUpRight /></a>
       </section>
-      <ExplorationGallery language={language} codeLabel={codeLabel} />
+      <ExplorationGallery language={language} />
     </>
   );
 }

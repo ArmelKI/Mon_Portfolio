@@ -131,7 +131,7 @@ export const explorations = [
     slug: 'vetements-bf', title: 'Vêtements BF', status: l('Boutique éditoriale interactive', 'Interactive editorial storefront'),
     description: l('Une boutique éditoriale avec collections, fiches produit, panier, favoris, lookbook et administration locale.', 'An editorial storefront with collections, product pages, cart, favorites, lookbook and local administration.'),
     highlights: l(['Collections & lookbook', 'Panier & favoris', 'Espace administration'], ['Collections & lookbook', 'Cart & favorites', 'Admin area']), stack: ['React', 'TypeScript', 'Tailwind', 'Commerce UX'], url: 'https://github.com/ArmelKI/v-tementsbf-boutique',
-    media: { src: '/assets/images/projects/vetements-bf-home.webp', width: 1440, height: 1000, alt: l('Accueil de Vêtements BF exécuté depuis le dépôt public.', 'Vêtements BF home screen run from the public repository.') },
+    media: { src: '/assets/images/projects/vetements-bf-home.webp', width: 1440, height: 857, alt: l('Accueil de Vêtements BF exécuté depuis le dépôt public.', 'Vêtements BF home screen run from the public repository.') },
   },
   {
     slug: 'delices-de-mira', title: 'Les Délices de Mira', status: l('Application e-commerce avec administration', 'E-commerce application with administration'),
