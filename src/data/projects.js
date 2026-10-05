@@ -98,7 +98,7 @@ export const notableProjects = [
     slug: 'rentwise-africa', title: 'Rentwise Africa', privateDemo: true, status: l('Interface SaaS de gestion locative — démo locale', 'Property-management SaaS interface — local demo'),
     description: l('Une interface SaaS configurable pour suivre biens, unités, locataires, loyers, contrats, maintenance et rapports.', 'A configurable SaaS interface for tracking properties, units, tenants, rent, contracts, maintenance and reports.'),
     highlights: l(['Dashboard métier', 'Configuration white-label', 'Données locales de démonstration'], ['Business dashboard', 'White-label configuration', 'Local demonstration data']), stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts'],
-    visual: l(['Biens & unités', 'Locataires & contrats', 'Loyers & maintenance', 'Rapports & white-label'], ['Properties & units', 'Tenants & contracts', 'Rent & maintenance', 'Reports & white-label']),
+    media: { src: '/assets/images/projects/rentwise-dashboard.webp', width: 1440, height: 857, alt: l('Tableau de bord Rentwise Africa avec données locales de démonstration.', 'Rentwise Africa dashboard with local demonstration data.'), caption: l('Capture de la démo locale — données fictives.', 'Local demo capture — fictional data.') },
   },
 ];
 
